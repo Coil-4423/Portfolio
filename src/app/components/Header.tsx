@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link  from 'next/link'; // Import for navigation using React Router
 import '../css/header.css'; // Import your CSS file
-import HamburgerMenu from './HamburgerMenu';
 
 const NavBar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false); // State to manage hamburger menu

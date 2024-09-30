@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
+import Image from "next/image";
 
 // Define types for API response and ACF fields
 interface Tool {
@@ -81,7 +82,7 @@ const About = () => {
             {tools &&
               tools.map((tool, index) => (
                 <li key={index}>
-                  <img
+                  <Image
                     src={tool.tool_image.url}
                     alt={tool.tool_name || "tool"}
                     style={{ width: "50px", height: "50px" }}

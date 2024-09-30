@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Layout from "./components/Layout";
 import PuzzleText from './components/PuzzleAnimation'
 import './css/index.css';
