@@ -29,7 +29,7 @@ const PuzzleText = () => {
   }, []);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
       <div style={{ fontSize: '2rem', fontWeight: 'bold', position: 'relative' }}>
         {letters.map((letter, index) => {
           const { x, y } = getRandomPosition();
@@ -40,7 +40,7 @@ const PuzzleText = () => {
               initial={{ x, y, opacity: 0 }}  // Initial random position
               animate={animate ? { x: 0, y: 0, opacity: 1 } : {}} // Final position (0, 0) once animated
               transition={{ delay: index * 0.1, duration: 0.8 }}  // Delay and duration for each letter
-              style={{ display: 'inline-block' }}
+              style={{ display: 'inline-block' , color:'white'}}
             >
               {letter}
             </motion.span>

@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <header>
+    <>
       <div className="logo">
         <Link href="/">My Portfolio</Link>
       </div>
@@ -38,7 +38,8 @@ const NavBar: React.FC = () => {
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-    </header>
+    {/* </header> */}
+    </>
   );
 };
 

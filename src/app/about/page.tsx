@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import Image from "next/image";
+import LoadingComponent from "../components/LoadingComponent";
+import '../css/index.css';
+
 
 // Define types for API response and ACF fields
 interface Tool {
@@ -60,6 +63,9 @@ const About = () => {
 
   return (
     <Layout>
+      {loading ? (
+        <LoadingComponent/>
+      ):(
       <main>
         <section>
           <h2>Who I Am</h2>
@@ -85,7 +91,8 @@ const About = () => {
                   <Image
                     src={tool.tool_image.url}
                     alt={tool.tool_name || "tool"}
-                    style={{ width: "50px", height: "50px" }}
+                    width={50}
+                    height={50}
                   />
                   {tool.tool_name}
                 </li>
@@ -93,6 +100,7 @@ const About = () => {
           </ul>
         </section>
       </main>
+      )}
     </Layout>
   );
 };

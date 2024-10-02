@@ -1,0 +1,30 @@
+/* Full-screen background for random characters */
+.random-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #111; /* Background color */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container for the random characters */
+  .overlay-text {
+    color: rgba(255, 255, 255, 0.1); /* Light characters */
+    font-size: 24px; /* Adjust font size */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    letter-spacing: 3px;
+    white-space: pre-wrap;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+  }
+  
+  /* Add transition effect to each character */
+  .random-char {
+    transition: all 0.3s ease-in-out;
+  }
+  
