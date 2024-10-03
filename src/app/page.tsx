@@ -8,11 +8,13 @@ export default function Home() {
   return (
       // <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Layout>
-          <main>
+          {/* <main> */}
             <div className='landing-page'>
-            <PuzzleText></PuzzleText>
+              <p>Hello, I'm Takehito Sumimura. A passionate Web Developer.</p>
+              <PuzzleText></PuzzleText>
+              
             </div>
-          </main>
+          {/* </main> */}
         </Layout>
       // </main>
 

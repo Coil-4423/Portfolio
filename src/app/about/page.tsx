@@ -1,9 +1,12 @@
 "use client";
+import React from "react";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import Image from "next/image";
 import LoadingComponent from "../components/LoadingComponent";
 import '../css/index.css';
+
+import '../css/About.css';
 
 
 // Define types for API response and ACF fields
@@ -66,7 +69,8 @@ const About = () => {
       {loading ? (
         <LoadingComponent/>
       ):(
-      <main>
+        <>
+
         <section>
           <h2>Who I Am</h2>
           <p>{who_i_am}</p>
@@ -94,12 +98,12 @@ const About = () => {
                     width={50}
                     height={50}
                   />
-                  {tool.tool_name}
+                  <span>{tool.tool_name}</span>
                 </li>
               ))}
           </ul>
         </section>
-      </main>
+        </>
       )}
     </Layout>
   );

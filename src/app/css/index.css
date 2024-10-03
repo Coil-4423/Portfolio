@@ -1,11 +1,13 @@
-/* Ensure body and html take the full width and height of the viewport */
+/* Ensure html and body take up full height */
 html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures footer sticks to the bottom */
+  box-sizing: border-box;
+}
   
   /* Add a flex layout for centering content (optional) */
   body {
@@ -16,14 +18,14 @@ html, body {
     width: 100%;
   }
   
-  #root {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    /* min-height: 100vh; */
-  }
+/* Root div that contains all the content */
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh; /* Takes the full viewport height */
+}
   /* 
   .header {
     width: 100%;
@@ -43,7 +45,7 @@ html, body {
   
     color-scheme: light dark;
     color: rgb(0, 0, 0);
-    background-color: #000000;
+    background-color: #161616;
   
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -63,6 +65,8 @@ html, body {
   body {
     margin: 0;
     display: flex;
+    flex-direction:column;
+
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
@@ -105,13 +109,19 @@ html, body {
     }
   }
 
-  main{
+  /* main{
     position:absolute;
-    /* top:4rem; */
-    padding-top:5rem;
     min-height:100vh;
     min-width:100%;
     background-color: rgba(0, 0, 0, 0);
+  } */
+
+  /* Main content section, it grows to take the available space */
+main {
+  flex: 1; /* This ensures that the content takes all the available space */
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 1rem;
 }
 h2{
   color:rgb(255, 255, 255);
@@ -128,5 +138,6 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top:6rem;
+  flex-direction: column;
+  /* margin-top:6rem; */
 }
