@@ -3,6 +3,7 @@
 import Layout from "./components/Layout";
 import PuzzleText from './components/PuzzleAnimation'
 import './css/index.css';
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
             <div className='landing-page'>
               <p>Hello, I'm Takehito Sumimura. A passionate Web Developer.</p>
               <PuzzleText></PuzzleText>
-              
+              <Contact></Contact>
             </div>
           {/* </main> */}
         </Layout>

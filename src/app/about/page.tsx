@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import Image from "next/image";
 import LoadingComponent from "../components/LoadingComponent";
-import '../css/index.css';
+import "../css/index.css";
 
-import '../css/About.css';
-
+import "../css/About.css";
 
 // Define types for API response and ACF fields
 interface Tool {
@@ -66,45 +65,44 @@ const About = () => {
 
   return (
     <Layout>
-      {loading ? (
-        <LoadingComponent/>
-      ):(
-        <>
+        {loading ? (
+          <LoadingComponent />
+        ) : (
+          <main>
+            <section>
+              <h2>Who I Am</h2>
+              <p>{who_i_am}</p>
+            </section>
 
-        <section>
-          <h2>Who I Am</h2>
-          <p>{who_i_am}</p>
-        </section>
+            <section>
+              <h2>What I Do</h2>
+              <p>{what_i_do}</p>
+            </section>
 
-        <section>
-          <h2>What I Do</h2>
-          <p>{what_i_do}</p>
-        </section>
+            <section>
+              <h2>Future Goals</h2>
+              <p>{future_goals}</p>
+            </section>
 
-        <section>
-          <h2>Future Goals</h2>
-          <p>{future_goals}</p>
-        </section>
-
-        <section className="tools">
-          <h2>Tools</h2>
-          <ul>
-            {tools &&
-              tools.map((tool, index) => (
-                <li key={index}>
-                  <Image
-                    src={tool.tool_image.url}
-                    alt={tool.tool_name || "tool"}
-                    width={50}
-                    height={50}
-                  />
-                  <span>{tool.tool_name}</span>
-                </li>
-              ))}
-          </ul>
-        </section>
-        </>
-      )}
+            <section className="tools">
+              <h2>Tools</h2>
+              <ul>
+                {tools &&
+                  tools.map((tool, index) => (
+                    <li key={index}>
+                      <Image
+                        src={tool.tool_image.url}
+                        alt={tool.tool_name || "tool"}
+                        width={50}
+                        height={50}
+                      />
+                      <span>{tool.tool_name}</span>
+                    </li>
+                  ))}
+              </ul>
+            </section>
+          </main>
+        )}
     </Layout>
   );
 };

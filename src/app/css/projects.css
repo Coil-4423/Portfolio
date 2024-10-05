@@ -1,0 +1,110 @@
+.projects{
+    display: flex;
+    flex-direction: column;
+    max-width: 64rem;
+    margin:0 auto;
+}
+
+
+.project-card{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(112, 112, 112); */
+    margin:1rem;
+    padding:1rem;
+    border:2px solid white;
+    border-radius: 5px;
+    /*  */
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (min-width: 48rem){
+.project-card{
+    /* display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+}
+
+.project-image{
+    max-width: 28rem;
+}
+
+@media (min-width: 555px) {
+    .project-image{
+        margin: auto;
+    }
+}
+
+.thumbnail-image{ 
+    /* width: '300px';
+    height: '200px';  */
+    width:100%;
+    /* object-fit: 'cover';  */
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+
+    padding:1rem;
+    margin:1rem;
+}
+
+
+/* animation when hover */
+/* Zoom effect on hover */
+.project-card:hover {
+    transform: scale(1.1); /* Zooms in the entire card */
+}
+
+/* Image container to restrict the overflow for zoom effect */
+.project-image {
+    overflow: hidden;
+}
+
+/* Image zoom effect */
+.thumbnail-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.project-card:hover .thumbnail-image {
+    transform: scale(1.1); /* Zooms in the image on hover */
+}
+
+/* Styling for the More Info link */
+.project-card a {
+    color: #3b82f6; /* Original blue color */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.project-card:hover a {
+    color: #1d4ed8; /* Darker blue when hovered */
+}
+
+/* Adjust spacing and layout */
+.project-card article {
+    padding: 16px;
+}
+
+.project-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+}
