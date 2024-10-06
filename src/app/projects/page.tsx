@@ -6,6 +6,7 @@ import { motion, useInView } from 'framer-motion';
 import Layout from "../components/Layout";
 import "@/app/css/index.css";
 import "@/app/css/projects.css";
+import Carousel from "../components/Carousel";
 
 interface Project {
     id: number;
@@ -79,6 +80,7 @@ const Projects = () => {
         <Layout>
             <main>
                 <div className='projects'>
+                <Carousel></Carousel>
                     <h1>Projects</h1>
                     {projects.map((project, index) => (
                         <ProjectCard key={project.id} project={project} index={index} />

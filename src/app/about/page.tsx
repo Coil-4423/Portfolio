@@ -1,36 +1,12 @@
 "use client";
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Layout from "../components/Layout";
-import Image from "next/image";
 import LoadingComponent from "../components/LoadingComponent";
+import ToolSection from "./ToolSection"; // Import the ToolsSection component
 import "../css/index.css";
-
 import "../css/About.css";
-
-// Define types for API response and ACF fields
-interface Tool {
-  tool_name: string;
-  tool_image: {
-    url: string;
-    alt: string;
-  };
-}
-
-interface ACFFields {
-  who_i_am: string;
-  what_i_do: string;
-  future_goals: string;
-  tools: Tool[];
-}
-
-interface AboutPageData {
-  id: number;
-  title: {
-    rendered: string;
-  };
-  acf: ACFFields;
-}
+import { AboutPageData } from "./types"; // Import the AboutPageData type
 
 const About = () => {
   const [aboutData, setAboutData] = useState<AboutPageData | null>(null); // State to store about page data
@@ -63,46 +39,66 @@ const About = () => {
   // Destructure ACF data
   const { who_i_am, what_i_do, future_goals, tools } = aboutData.acf;
 
+  // Define motion variants for animations
+  const sectionVariant = {
+    hidden: { opacity: 0, y: 50 }, // Start hidden and shifted down
+    visible: { opacity: 1, y: 0 }, // Animate to visible and centered
+  };
+
+  const staggerContainer = {
+    visible: {
+      transition: {
+        staggerChildren: 0.3, // Stagger each section's appearance
+      },
+    },
+  };
+
   return (
     <Layout>
-        {loading ? (
-          <LoadingComponent />
-        ) : (
-          <main>
-            <section>
-              <h2>Who I Am</h2>
-              <p>{who_i_am}</p>
-            </section>
+      {loading ? (
+        <LoadingComponent />
+      ) : (
+        <motion.main
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+        >
+          <motion.section
+            variants={sectionVariant}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h2>Who I Am</h2>
+            <p>{who_i_am}</p>
+          </motion.section>
 
-            <section>
-              <h2>What I Do</h2>
-              <p>{what_i_do}</p>
-            </section>
+          <motion.section
+            variants={sectionVariant}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <h2>What I Do</h2>
+            <p>{what_i_do}</p>
+          </motion.section>
 
-            <section>
-              <h2>Future Goals</h2>
-              <p>{future_goals}</p>
-            </section>
+          <motion.section
+            variants={sectionVariant}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <h2>Future Goals</h2>
+            <p>{future_goals}</p>
+          </motion.section>
 
-            <section className="tools">
-              <h2>Tools</h2>
-              <ul>
-                {tools &&
-                  tools.map((tool, index) => (
-                    <li key={index}>
-                      <Image
-                        src={tool.tool_image.url}
-                        alt={tool.tool_name || "tool"}
-                        width={50}
-                        height={50}
-                      />
-                      <span>{tool.tool_name}</span>
-                    </li>
-                  ))}
-              </ul>
-            </section>
-          </main>
-        )}
+          {/* Replace the tools section with the ToolsSection component */}
+          <motion.section
+            className="tools"
+            variants={sectionVariant}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            {/* <h2>Tools</h2> */}
+            {/* Pass the tools array to the ToolsSection component */}
+            <ToolSection tools={tools} />
+          </motion.section>
+        </motion.main>
+      )}
     </Layout>
   );
 };

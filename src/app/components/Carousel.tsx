@@ -63,7 +63,7 @@ const CarouselItem: React.FC<{ project: Project; index: number; total: number }>
         Math.sin(angle) * 3,
       ]}
     >
-      <boxGeometry attach="geometry" args={[3, 3, 3]} />
+      <boxGeometry attach="geometry" args={[1, 1, 1]} />
       {texture && (
         <meshBasicMaterial attach="material" map={texture} />
       )}
@@ -75,7 +75,7 @@ const Carousel: React.FC = () => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <div style={{ width: "100vw", height: "100vh"}}>
+    <div style={{ width: "100%", height: "100%"}}>
       <Canvas camera={{ position: [0, 3, 5] }}>
         {projects.map((project, index) => (
           <CarouselItem
