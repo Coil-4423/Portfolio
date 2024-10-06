@@ -32,10 +32,10 @@ const ToolsSection: React.FC<ToolsSectionProps> = ({ tools }) => {
           <motion.li
             key={index}
             className="tool-item"
-            variants={toolVariant} // Use puzzle effect variants
+            // variants={toolVariant} // Use puzzle effect variants
             initial="hidden" // Start with hidden state
             animate={isInView ? "visible" : "hidden"} // Animate only when in view
-            whileHover="hover" // Hover effect for each tool
+            // whileHover="hover" // Hover effect for each tool
             transition={{ delay: index * 0.2, duration: 0.8 }}  // Staggered delay for puzzle effect
             style={{ display: 'inline-block'}}
           >
