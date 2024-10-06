@@ -22,9 +22,6 @@ const NavBar: React.FC = () => {
             <Link href="/" onClick={toggleMenu}>Home</Link>
           </li>
           <li>
-            <Link href="/portfolio" onClick={toggleMenu}>Portfolio</Link>
-          </li>
-          <li>
             <Link href="/projects" onClick={toggleMenu}>Projects</Link>
           </li>
           <li>

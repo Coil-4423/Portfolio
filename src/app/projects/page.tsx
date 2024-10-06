@@ -15,6 +15,7 @@ interface Project {
     };
     acf: {
         project_overview?: string;
+        description?:string;
         gallery: {
             url: string;
         }[];
@@ -26,10 +27,13 @@ const Projects = () => {
 
     useEffect(() => {
         fetch('https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects?acf_format=standard')
+        // fetch('https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects')
+
             .then(response => response.json())
             .then(data => {
                 if (Array.isArray(data)) {
                     setProjects(data);
+                    console.log(data);
                 } else {
                     console.error("Unexpected response format", data);
                 }
@@ -63,7 +67,8 @@ const Projects = () => {
                             </div>
                             <article>
                                 <h3>{project.title.rendered}</h3>
-                                <p>{project.acf.project_overview}</p>
+                                {/* <p>{project.acf.project_overview}</p> */}
+                                <p>{project.acf.description}</p>
                                 {/* Link to the individual project page */}
                                 <Link href={`/projects/${project.id}`}>
                                     More Info
