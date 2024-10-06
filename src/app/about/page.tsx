@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Layout from "../components/Layout";
 import LoadingComponent from "../components/LoadingComponent";
 import ToolSection from "./ToolSection"; // Import the ToolsSection component
@@ -45,12 +45,27 @@ const About = () => {
     visible: { opacity: 1, y: 0 }, // Animate to visible and centered
   };
 
-  const staggerContainer = {
-    visible: {
-      transition: {
-        staggerChildren: 0.3, // Stagger each section's appearance
-      },
-    },
+  // Generalized Section Component with In-View Animation
+  const SectionWithAnimation = ({
+    children,
+  }: {
+    children: React.ReactNode;
+  }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+
+    return (
+      <motion.section
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={sectionVariant}
+        transition={{ duration: 0.5 }}
+        style={{ overflow: "hidden" }} // Prevent any overflow that could cause unnecessary space
+      >
+        {children}
+      </motion.section>
+    );
   };
 
   return (
@@ -58,45 +73,26 @@ const About = () => {
       {loading ? (
         <LoadingComponent />
       ) : (
-        <motion.main
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.section
-            variants={sectionVariant}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+        <motion.main initial="hidden" animate="visible">
+          <SectionWithAnimation>
             <h2>Who I Am</h2>
             <p>{who_i_am}</p>
-          </motion.section>
+          </SectionWithAnimation>
 
-          <motion.section
-            variants={sectionVariant}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
+          <SectionWithAnimation>
             <h2>What I Do</h2>
             <p>{what_i_do}</p>
-          </motion.section>
+          </SectionWithAnimation>
 
-          <motion.section
-            variants={sectionVariant}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
+          <SectionWithAnimation>
             <h2>Future Goals</h2>
             <p>{future_goals}</p>
-          </motion.section>
+          </SectionWithAnimation>
 
-          {/* Replace the tools section with the ToolsSection component */}
-          <motion.section
-            className="tools"
-            variants={sectionVariant}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            {/* <h2>Tools</h2> */}
-            {/* Pass the tools array to the ToolsSection component */}
+          {/* ToolSection with animation trigger */}
+          <SectionWithAnimation>
             <ToolSection tools={tools} />
-          </motion.section>
+          </SectionWithAnimation>
         </motion.main>
       )}
     </Layout>
