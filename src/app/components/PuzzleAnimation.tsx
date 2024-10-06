@@ -30,7 +30,7 @@ const PuzzleText = () => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-      <div style={{ fontSize: '2rem', fontWeight: 'bold', position: 'relative' }}>
+      <div style={{ fontSize: '4rem', fontWeight: 'bold', position: 'relative' }}>
         {letters.map((letter, index) => {
           const { x, y } = getRandomPosition();
 

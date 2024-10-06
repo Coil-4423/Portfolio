@@ -1,0 +1,29 @@
+/* src/components/Layout.module.css */
+
+.layout {
+    background: linear-gradient(90deg, #002766, #003a8c, #004fbf, #0066ff); /* Deep blue gradient */
+    background-size: 400% 400%; /* Make the background larger to allow movement */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: gradientAnimation 10s ease infinite; /* Smooth animation */
+}
+
+.content {
+    flex: 1;
+}
+
+/* Keyframes for smooth gradient movement */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+

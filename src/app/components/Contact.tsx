@@ -1,13 +1,12 @@
 "use client";
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import LoadingComponent from "../components/LoadingComponent";
 import "../css/ContactLinks.css";
 import "../css/index.css"; // Define types for API response and ACF fields
 
 interface Contact {
-  contact_url: string;
+  contact_url?: string;
   contact_icon: {
     url: string;
     alt: string;
@@ -16,6 +15,11 @@ interface Contact {
 
 interface ACFFields {
   contact: Contact[];
+  email: string;
+  email_icon: {
+    url: string;
+    alt: string;
+  };
 }
 
 interface ContactData {
@@ -36,8 +40,8 @@ const Contact = () => {
       .then((data) => {
         if (data && data.length > 0) {
           setContactData(data[0]);
+          console.log(data[0]);
         }
-        console.log(data);
         setLoading(false);
       })
       .catch((error) => {
@@ -54,7 +58,7 @@ const Contact = () => {
     return <div>No Contact data found</div>;
   }
 
-  const { contact } = contactData.acf;
+  const { contact, email, email_icon } = contactData.acf;
 
   return (
     <div>
@@ -64,15 +68,32 @@ const Contact = () => {
         <section className="contact">
           {contact &&
             contact.map((contact, index) => (
-              <a href={contact.contact_url}>
+              <div key={index} className="contact-item">
+                {contact.contact_url && (
+                  <a href={contact.contact_url} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src={contact.contact_icon.url}
+                      alt={contact.contact_icon.alt || "contact"}
+                      width={50}
+                      height={50}
+                    />
+                  </a>
+                )}
+              </div>
+            ))}
+          {/* Rendering the email and email icon */}
+          {email && email_icon && (
+            <div className="email-item">
+              <a href={`mailto:${email}`}>
                 <Image
-                  src={contact.contact_icon.url}
-                  alt={contact.contact_url || "contact"}
+                  src={email_icon.url}
+                  alt={email_icon.alt || "email"}
                   width={50}
                   height={50}
                 />
               </a>
-            ))}
+            </div>
+          )}
         </section>
       )}
     </div>
