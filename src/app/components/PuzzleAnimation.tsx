@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const PuzzleText = () => {
-  const text = "Welcome to My Portfolio";
+  const text = "React/Next.js Developer";
   
-  // Split text into an array of letters
+  // Split text into an array of letters, including spaces
   const letters = text.split('');
 
   // State to trigger the animation
@@ -28,6 +28,9 @@ const PuzzleText = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+  // Find the start index for "Developer" in the text
+  const developerStartIndex = text.indexOf("Developer");
+
   return (
     <div
       style={{
@@ -36,12 +39,16 @@ const PuzzleText = () => {
         alignItems: 'center',
         overflow: 'hidden', // Prevent overflow from the random positions
         width: '100%', // Optional: Ensures the parent container takes full width
-        height: '200px', // Adjust height as needed for text area
       }}
     >
       <div style={{ fontSize: '4rem', fontWeight: 'bold', position: 'relative' }}>
         {letters.map((letter, index) => {
           const { x, y } = getRandomPosition();
+
+          // If the current letter is part of "Developer", apply the green color (#00ff11)
+          const letterColor = index >= developerStartIndex && index < developerStartIndex + "Developer".length
+            ? '#00ff11' // Green for "Developer"
+            : 'white';  // Default color for other text
 
           return (
             <motion.span
@@ -49,9 +56,13 @@ const PuzzleText = () => {
               initial={{ x, y, opacity: 0 }}  // Initial random position
               animate={animate ? { x: 0, y: 0, opacity: 1 } : {}} // Final position (0, 0) once animated
               transition={{ delay: index * 0.1, duration: 0.8 }}  // Delay and duration for each letter
-              style={{ display: 'inline-block', color: 'white' }}
+              style={{ 
+                display: 'inline-block', 
+                color: letterColor,
+                marginRight: letter === ' ' ? '0.5rem' : '0rem', // Add spacing for spaces
+              }}
             >
-              {letter}
+              {letter === ' ' ? '\u00A0' : letter} {/* Add non-breaking space for spaces */}
             </motion.span>
           );
         })}

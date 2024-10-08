@@ -5,6 +5,7 @@ import PuzzleText from './components/PuzzleAnimation'
 import './css/index.css';
 import Contact from "./components/Contact";
 import Carousel from "./components/Carousel";
+import SkillsCarousel from "./components/SkillsCarousel";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
               <p>Hello, I'm Takehito Sumimura. A passionate Web Developer.</p>
               <PuzzleText></PuzzleText>
               <Contact></Contact>
+              <SkillsCarousel></SkillsCarousel>
               {/* <Carousel></Carousel> */}
             </div>
           </main>

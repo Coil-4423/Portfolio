@@ -6,7 +6,7 @@ import LoadingComponent from "../components/LoadingComponent";
 import ToolSection from "./ToolSection"; // Import the ToolsSection component
 import "../css/index.css";
 import "../css/About.css";
-import { AboutPageData } from "./types"; // Import the AboutPageData type
+import { AboutPageData } from "../types/AboutTypes"; // Import the AboutPageData type
 
 const About = () => {
   const [aboutData, setAboutData] = useState<AboutPageData | null>(null); // State to store about page data

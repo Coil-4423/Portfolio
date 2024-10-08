@@ -9,6 +9,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       className={styles.layout}
     >
       <Header />
+      <ul className={styles.background}>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
         {children}
       <Footer />
     </div>

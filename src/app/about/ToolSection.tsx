@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { Tool } from './types';
+import { Tool } from '../types/AboutTypes';
 import React, { useRef } from 'react';
 
 interface ToolsSectionProps {
@@ -11,7 +11,6 @@ interface ToolsSectionProps {
 const toolVariant = {
   hidden: { opacity: 0, x: 300, scale: 0.8 },  // Start off-screen to the right
   visible: { opacity: 1, x: 0, scale: 1 },    // Animate to visible, centered, and normal size
-  hover: { scale: 1.1, rotate: 3 },           // Slight scale up and rotate on hover
 };
 
 const ToolsSection: React.FC<ToolsSectionProps> = ({ tools }) => {
@@ -32,10 +31,9 @@ const ToolsSection: React.FC<ToolsSectionProps> = ({ tools }) => {
           <motion.li
             key={index}
             className="tool-item"
-            // variants={toolVariant} // Use puzzle effect variants
+            variants={toolVariant} // Use puzzle effect variants
             initial="hidden" // Start with hidden state
             animate={isInView ? "visible" : "hidden"} // Animate only when in view
-            // whileHover="hover" // Hover effect for each tool
             transition={{ delay: index * 0.2, duration: 0.8 }}  // Staggered delay for puzzle effect
             style={{ display: 'inline-block'}}
           >
