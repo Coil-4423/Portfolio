@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface ProjectCardProps {
     id: number;
@@ -12,7 +13,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, overview, thumbnai
     return (
         <div className="project-card group border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105">
             <div className="project-image overflow-hidden">
-                <img
+                <Image
                     src={thumbnailUrl}
                     alt="Project Thumbnail"
                     className="w-full h-48 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"

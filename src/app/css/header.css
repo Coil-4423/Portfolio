@@ -38,7 +38,7 @@
     top: 3.5rem;
     right: 5%;
     width: 200px;
-    background-color: rgba(0, 0, 0, 0); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.498); /* Semi-transparent black */
     backdrop-filter: blur(10px); /* Apply the blur effect */
     transition: transform 0.3s ease-out; /* Smooth transition for transform */
     display: flex;

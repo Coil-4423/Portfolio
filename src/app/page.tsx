@@ -4,7 +4,6 @@ import Layout from "./components/Layout";
 import PuzzleText from './components/PuzzleAnimation'
 import './css/index.css';
 import Contact from "./components/Contact";
-import Carousel from "./components/Carousel";
 import SkillsCarousel from "./components/SkillsCarousel";
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
               <PuzzleText></PuzzleText>
               <Contact></Contact>
               <SkillsCarousel></SkillsCarousel>
-              {/* <Carousel></Carousel> */}
             </div>
           </main>
         </Layout>

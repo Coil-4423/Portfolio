@@ -1,7 +1,6 @@
 // src/app/projects/[id]/ProjectDetailClient.tsx
 'use client'; // Mark this as a client component
 
-import { useState, useEffect } from 'react';
 import Layout from './Layout';
 import '@/app/css/index.css';
 
