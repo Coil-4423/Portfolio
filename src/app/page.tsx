@@ -12,7 +12,7 @@ export default function Home() {
         <Layout>
           <main>
             <div className='landing-page'>
-              <p>Hello, I'm Takehito Sumimura. A passionate Web Developer.</p>
+              <p>Hello, I&apos;m Takehito Sumimura. A passionate Web Developer.</p>
               <PuzzleText></PuzzleText>
               <Contact></Contact>
               <SkillsCarousel></SkillsCarousel>
