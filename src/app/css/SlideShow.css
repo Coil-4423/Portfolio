@@ -1,0 +1,64 @@
+.slideshow-container {
+    width: 100%; /* Ensure it spans the full width */
+    max-width: 1200px;
+    height: auto; /* Let the content determine the height */
+  }
+
+  .slick-prev, .slick-next {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Custom background image for the left arrow */
+  .slick-prev {
+    background-image: url('/left-arrow-backup-2-svgrepo-com.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; /* Ensure it's centered */
+    left: -45px; /* Adjust position as needed */
+  }
+  
+  /* Custom background image for the right arrow */
+  .slick-next {
+    background-image: url('/right-arrow-backup-2-svgrepo-com.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; /* Ensure it's centered */
+    right: -45px; /* Adjust position as needed */
+  }
+  
+  /* Remove default arrow text */
+  .slick-prev:before, .slick-next:before {
+    display: none;
+  }
+  
+  
+  .slick-dots {
+    bottom: 10px; /* Adjust the position */
+    text-align: center; /* Align dots */
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px; /* Size of the dots */
+    color: #00ff11; /* Color of the dots */
+    opacity: 0.75; /* Transparency */
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #00ff11; /* Color of active dot */
+    opacity: 1;
+  }
+  
+  .slick-dots li button:before {
+    border-radius: 50%; /* Make dots round */
+    width: 10px;
+    height: 10px;
+  }
+  
+  .slick-dots {
+    bottom: 20px; /* Move dots higher */
+  }

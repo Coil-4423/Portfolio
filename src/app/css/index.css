@@ -195,3 +195,14 @@ p{
   flex-direction: column;
   /* margin-top:6rem; */
 }
+
+
+
+.project-card {
+  max-width: 100%; /* Prevents cards from getting too large */
+}
+
+.thumbnail-image {
+  max-width: 100%; /* Ensure images do not overflow */
+  height: auto;    /* Maintain aspect ratio */
+}
