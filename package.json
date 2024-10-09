@@ -16,12 +16,15 @@
     "react": "^18",
     "react-dom": "^18",
     "react-scroll-parallax": "^3.4.5",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "three": "^0.169.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/slick-carousel": "^1.6.40",
     "@types/three": "^0.169.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^8",

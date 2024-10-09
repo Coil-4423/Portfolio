@@ -1,35 +1,41 @@
-import React from 'react';
+import React ,{useRef}from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, useInView } from 'framer-motion';
 
-interface ProjectCardProps {
-    id: number;
-    title: string;
-    overview?: string;
-    thumbnailUrl: string;
-}
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+    const ref = useRef(null); // Reference to track the visibility of each project card
+    const isInView = useInView(ref, { once: true, margin: '0px 0px -100px 0px' }); // Trigger when card is visible
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, overview, thumbnailUrl }) => {
     return (
-        <div className="project-card group border border-gray-300 rounded-lg shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105">
-            <div className="project-image overflow-hidden">
-                <Image
-                    src={thumbnailUrl}
-                    alt="Project Thumbnail"
-                    className="w-full h-48 object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                />
+        <motion.div
+            ref={ref}  // Attach the ref to the card
+            className='project-card'
+            initial={{ opacity: 0, y: 50 }}  // Start hidden and shifted down
+            animate={isInView ? { opacity: 1, y: 0 } : {}}  // Only animate when in view
+            transition={{ duration: 0.5, delay: index * 0.2 }}  // Stagger each card appearance slightly
+        >
+            <div className='project-image'>
+                {/* Check if the gallery exists and has at least one item */}
+                {project.acf.gallery && project.acf.gallery.length > 0 ? (
+                    <img
+                        src={project.acf.gallery[0].url}
+                        alt="thumbnailImage"
+                        className='thumbnail-image'
+                    />
+                ) : (
+                    <div className="placeholder-image" />
+                )}
             </div>
-            <article className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                <p className="text-gray-600 mb-4">{overview}</p>
-                <Link href={`/projects/${id}`}>
-                    <a className="text-blue-500 group-hover:text-blue-700 transition-colors duration-300">
-                        More Info
-                    </a>
+            <article>
+                <h3>{project.title.rendered}</h3>
+                <p>{project.acf.description}</p>
+                {/* Link to the individual project page */}
+                <Link href={`/projects/${project.id}`}>
+                    More Info
                 </Link>
             </article>
-        </div>
+        </motion.div>
     );
 };
-
 export default ProjectCard;
