@@ -2,18 +2,18 @@
 
 import ProjectDetailClient from '../../components/ProjectDetailClient';
 
-interface Project {
-    id: number;
-    title: {
-        rendered: string;
-    };
-    acf: {
-        project_overview?: string;
-        features_functionality?: string;
-        github_repository_link?: string;
-        live_site_link?: string;
-    };
-}
+// interface Project {
+//     id: number;
+//     title: {
+//         rendered: string;
+//     };
+//     acf: {
+//         project_overview?: string;
+//         features_functionality?: string;
+//         github_repository_link?: string;
+//         live_site_link?: string;
+//     };
+// }
 
 async function fetchProject(id: string): Promise<Project | null> {
     const response = await fetch(`https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects/${id}?acf_format=standard`);

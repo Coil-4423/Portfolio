@@ -13,17 +13,17 @@ interface SlideShowProps {
 export default function SlideShow({ slides }: SlideShowProps) {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: slides.length > 1,  // Disable infinite scroll if only one slide
     speed: 500,
     slidesToShow: 1,  // Show one slide at a time
     slidesToScroll: 1, // Scroll one slide at a time
-    autoplay: true,    // Automatically transition between slides
+    autoplay: slides.length > 1,    // Only autoplay if more than one slide
     autoplaySpeed: 4000, // Time between transitions (4 seconds)
-    arrows: true,      // Enable custom arrows
+    arrows: slides.length > 1,      // Only show arrows if more than one slide
     prevArrow: <CustomPrevArrow />, // Use custom prev arrow
     nextArrow: <CustomNextArrow />  // Use custom next arrow
   };
-
+  
   return (
     <div className="slideshow-container">
       <Slider {...settings}>

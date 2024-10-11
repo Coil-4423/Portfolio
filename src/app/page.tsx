@@ -43,9 +43,12 @@ export default function Home() {
               <Contact></Contact>
               <SkillsCarousel></SkillsCarousel>
               <div className="about-link">
-                <Link href="/about" passHref>About</Link>              
+                <Link href="/about" passHref>More about me</Link>              
               </div>
               <SlideShow slides={projectSlides}></SlideShow>
+              <div className="projects-link">
+                <Link href="/projects" passHref>See all the projects</Link>              
+              </div>
             </div>
           </main>
         </Layout>

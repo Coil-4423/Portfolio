@@ -6,6 +6,9 @@ interface Project {
     acf: {
         project_overview?: string;
         description?: string;
+        features_functionality?: string;
+        github_repository_link?: string;
+        live_site_link?: string;
         gallery: {
             url: string;
         }[];

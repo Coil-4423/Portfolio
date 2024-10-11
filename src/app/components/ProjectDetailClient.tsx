@@ -3,45 +3,78 @@
 
 import Layout from './Layout';
 import '@/app/css/index.css';
-
-interface Project {
-    id: number;
-    title: {
-        rendered: string;
-    };
-    acf: {
-        project_overview?: string;
-        features_functionality?: string;
-        github_repository_link?: string;
-        live_site_link?: string;
-    };
-}
+import '@/app/css/project-detail.css';
+import { useState } from 'react';
+import SlideShow from './SlideShow';
+import Image from 'next/image';
 
 export default function ProjectDetailClient({ project }: { project: Project }) {
+    // State for toggling each section
+    const [showOverview, setShowOverview] = useState(true);
+    const [showFeatures, setShowFeatures] = useState(false);
+    console.log(project.acf.gallery);
+
+    const projectSlides = project.acf.gallery.map((image, index) => (
+        <div key={index} className='image-container'>
+            <Image
+                src={image.url}
+                alt={`project image ${index}`}
+                layout="fill"        // Fill the container
+                objectFit="cover"     // Ensure the image covers the entire container
+                quality={100}         // Set high quality for sharp images
+            />
+        </div>
+    ));
+    
+
     return (
         <Layout>
             <main>
+                <SlideShow slides={projectSlides}></SlideShow>
                 <h1>{project.title.rendered}</h1>
-                <p>{project.acf.project_overview}</p>
-                {project.acf.features_functionality && (
-                    <p><strong>Features:</strong> {project.acf.features_functionality}</p>
-                )}
-                {project.acf.github_repository_link && (
-                    <p>
-                        <strong>GitHub:</strong>{" "}
+                <div className='links'>
+                    {/* GitHub Link */}
+                    {project.acf.github_repository_link && (
                         <a href={project.acf.github_repository_link} target="_blank" rel="noopener noreferrer">
-                            {project.acf.github_repository_link}
+                            <strong>GitHub</strong>
                         </a>
-                    </p>
-                )}
-                {project.acf.live_site_link && (
-                    <p>
-                        <strong>Live Site:</strong>{" "}
+                    )}
+                
+                    {/* Live Site Link */}
+                    {project.acf.live_site_link && (
                         <a href={project.acf.live_site_link} target="_blank" rel="noopener noreferrer">
-                            {project.acf.live_site_link}
+                            <strong>Live Site</strong>
                         </a>
-                    </p>
+                    )}
+                </div>
+            <div className='toggle'>
+                    <button onClick={() => {
+                        setShowOverview(true);
+                        setShowFeatures(false);
+                        }}>
+                        <p>Show Project Overview</p>
+                    </button>
+                    <button onClick={() => {
+                        setShowOverview(false);
+                        setShowFeatures(true);
+                        }}>
+                        <p>Show Features</p>
+                    </button>
+            </div>
+                {/* Toggle Project Overview */}
+                <div>
+                    {showOverview && <p>{project.acf.project_overview}</p>}
+                </div>
+
+                {/* Toggle Features and Functionality */}
+                {project.acf.features_functionality && (
+                    <div>
+                        {showFeatures && (
+                            <p><strong>Features:</strong> {project.acf.features_functionality}</p>
+                        )}
+                    </div>
                 )}
+
             </main>
         </Layout>
     );
