@@ -1,35 +1,27 @@
 .slideshow-container {
-    width: 100%; /* Ensure it spans the full width */
-    max-width: 1200px;
+    width: 90%; 
+    max-width: 64rem;
+
     height: auto; /* Let the content determine the height */
   }
 
   .slick-prev, .slick-next {
-    width: 40px; /* Adjust as needed */
-    height: 40px; /* Adjust as needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
+    width: fit-content;
+    height:fit-content;
+  }
+
+  /* Target the arrow images for hover effects */
+.arrow-img {
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
   }
   
-  /* Custom background image for the left arrow */
-  .slick-prev {
-    background-image: url('/left-arrow-backup-2-svgrepo-com.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; /* Ensure it's centered */
-    left: -45px; /* Adjust position as needed */
+  /* Add a scaling effect on hover */
+  .arrow-img:hover {
+    transform: scale(1.2); /* Scale the image slightly when hovered */
   }
   
-  /* Custom background image for the right arrow */
-  .slick-next {
-    background-image: url('/right-arrow-backup-2-svgrepo-com.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; /* Ensure it's centered */
-    right: -45px; /* Adjust position as needed */
-  }
   
   /* Remove default arrow text */
   .slick-prev:before, .slick-next:before {
@@ -59,6 +51,21 @@
     height: 10px;
   }
   
-  .slick-dots {
-    bottom: 20px; /* Move dots higher */
+/* Ensure dots are positioned below the slides */
+.slick-dots {
+    position: relative; /* Relative to the container */
+    bottom: 0px; /* Move dots further down */
+    margin-top: 20px; /* Adds space between the slides and dots */
+    z-index: 1; /* Ensure they are not hidden by the slides */
   }
+  
+  /* Optional: Style for the container if more padding is needed */
+  .slick-slider {
+    padding-bottom: 50px; /* Add space at the bottom for dots */
+  }
+  
+  /* You can further adjust the slick-list container if needed */
+  .slick-list {
+    margin-bottom: 40px; /* Adjust the spacing below the slides */
+  }
+  

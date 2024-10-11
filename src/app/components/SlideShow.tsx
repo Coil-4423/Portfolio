@@ -1,10 +1,10 @@
 // SlideShow.tsx
 import React from "react";
 import Slider from "react-slick";
-import '@/app/css/SlideShow.css'; // Your custom CSS
 import { CustomPrevArrow, CustomNextArrow } from './CustomArrow'; // Import custom arrow components
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import '@/app/css/SlideShow.css'; // Your custom CSS
 
 interface SlideShowProps {
   slides: React.ReactNode[]; // Accepts an array of React elements (e.g., ProjectCard or images)

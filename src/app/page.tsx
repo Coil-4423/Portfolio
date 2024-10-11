@@ -8,6 +8,7 @@ import SkillsCarousel from "./components/SkillsCarousel";
 import SlideShow from "./components/SlideShow";
 import ProjectCard from "./components/ProjectCard";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 
 
@@ -41,6 +42,9 @@ export default function Home() {
               <PuzzleText></PuzzleText>
               <Contact></Contact>
               <SkillsCarousel></SkillsCarousel>
+              <div className="about-link">
+                <Link href="/about" passHref>About</Link>              
+              </div>
               <SlideShow slides={projectSlides}></SlideShow>
             </div>
           </main>
