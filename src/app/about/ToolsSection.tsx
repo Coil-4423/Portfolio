@@ -1,11 +1,8 @@
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { Tool } from '../types/AboutTypes';
+import { ACFFields} from '../types/AboutTypes';
 import React, { useRef } from 'react';
 
-interface ToolsSectionProps {
-  tools: Tool[];
-}
 
 // Define animation variants for each tool with puzzle effect
 const toolVariant = {
@@ -13,9 +10,10 @@ const toolVariant = {
   visible: { opacity: 1, x: 0, scale: 1 },    // Animate to visible, centered, and normal size
 };
 
-const ToolsSection: React.FC<ToolsSectionProps> = ({ tools }) => {
+const ToolsSection: React.FC<ACFFields> = ({ tools = []}) => {
   const ref = useRef(null); // Create a ref for the section
   const isInView = useInView(ref, { once: true, margin: '0px 0px -100px 0px' }); // Track when the section is in view
+  console.log(tools)
 
   return (
     <motion.section

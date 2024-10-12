@@ -1,4 +1,14 @@
-interface Project {
+
+interface Tool {
+    tool_name: string;
+    tool_image: {
+      url: string;
+      alt: string;
+    };
+  }
+  
+
+export interface Project {
     id: number;
     title: {
         rendered: string;
@@ -9,8 +19,9 @@ interface Project {
         features_functionality?: string;
         github_repository_link?: string;
         live_site_link?: string;
-        gallery: {
+        gallery?: {
             url: string;
         }[];
+        tools?:Tool[]
     };
 }

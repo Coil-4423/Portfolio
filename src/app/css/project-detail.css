@@ -1,8 +1,15 @@
-.links{
-    display:flex;
-    flex-direction:row;
+.single-project{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items: center;
+    max-width: 64rem;
+    margin:0 auto;
+}
+
+.links{
+    width:100%;
+    display:flex;
 }
 
 .links a{

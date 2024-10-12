@@ -117,16 +117,20 @@ html, body {
 
   /* Main content section, it grows to take the available space */
 main {
-  position:relative;
-  z-index:1;
-  flex: 1; /* This ensures that the content takes all the available space */
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  /* This ensures that the content takes all the available space */
   /* width: 100%; */
   background-color: rgba(0, 0, 0, 0);
   /* padding:1rem; */
   margin-top: 10rem;
-    margin-bottom: 10rem;
-    padding: 1.25rem;
-
+  margin-bottom: 10rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* Default (Mobile) Styles */
 h1, h2, h3, h4, h5, h6 {

@@ -5,6 +5,10 @@
     margin:0 auto;
 }
 
+.projects h1{
+    margin:1rem;
+}
+
 
 .project-card{
     display: flex;

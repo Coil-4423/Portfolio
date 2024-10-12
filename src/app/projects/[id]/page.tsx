@@ -1,5 +1,6 @@
 // src/app/projects/[id]/page.tsx (server component)
 
+import { Project } from '@/app/types/ProjectTypes';
 import ProjectDetailClient from '../../components/ProjectDetailClient';
 
 // interface Project {

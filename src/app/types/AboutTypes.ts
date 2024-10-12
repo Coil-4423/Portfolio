@@ -8,9 +8,9 @@ export interface Tool {
 }
 
 export interface ACFFields {
-  who_i_am: string;
-  what_i_do: string;
-  future_goals: string;
+  who_i_am?: string;
+  what_i_do?: string;
+  future_goals?: string;
   tools: Tool[];
 }
 

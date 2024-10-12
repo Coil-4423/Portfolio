@@ -9,6 +9,7 @@ import SlideShow from "./components/SlideShow";
 import ProjectCard from "./components/ProjectCard";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Project } from "./types/ProjectTypes";
 
 
 

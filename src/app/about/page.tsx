@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Layout from "../components/Layout";
 import LoadingComponent from "../components/LoadingComponent";
-import ToolSection from "./ToolSection"; // Import the ToolsSection component
+import ToolsSection from "./ToolsSection"; // Import the ToolsSection component
 import "../css/index.css";
 import "../css/About.css";
 import { AboutPageData } from "../types/AboutTypes"; // Import the AboutPageData type
@@ -91,7 +91,9 @@ const About = () => {
 
           {/* ToolSection with animation trigger */}
           <SectionWithAnimation>
-            <ToolSection tools={tools} />
+            {tools && tools.length > 0 && (
+              <ToolsSection tools={tools}></ToolsSection>
+            )}
           </SectionWithAnimation>
         </motion.main>
       )}

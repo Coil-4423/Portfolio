@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import "@/app/css/index.css";
 import "@/app/css/projects.css";
 import ProjectCard from '../components/ProjectCard';
+import { Project } from '../types/ProjectTypes';
 
 const Projects = () => {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -27,7 +28,7 @@ const Projects = () => {
         <Layout>
             <main>
                 <div className='projects'>
-                    <h1>Projects</h1>
+                        <h1>Projects</h1>
                     {projects.map((project, index) => (
                         <ProjectCard key={project.id} project={project} index={index} />
                     ))}
