@@ -1,8 +1,7 @@
 .slideshow-container {
     width: 90%; 
     max-width: 64rem;
-
-    height: auto; /* Let the content determine the height */
+    /* overflow: hidden; Prevent any overflow from large images */
   }
 
   .slick-prev, .slick-next {
@@ -68,4 +67,3 @@
   .slick-list {
     margin-bottom: 40px; /* Adjust the spacing below the slides */
   }
-  

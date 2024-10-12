@@ -1,34 +1,35 @@
 // SlideShow.tsx
 import React from "react";
-import Slider from "react-slick";
-import { CustomPrevArrow, CustomNextArrow } from './CustomArrow'; // Import custom arrow components
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import '@/app/css/SlideShow.css'; // Your custom CSS
+import { Swiper, SwiperSlide } from 'swiper/react';  // Import Swiper and SwiperSlide components
+import 'swiper/swiper-bundle.css';  // Import Swiper's styles
+
+// Import the specific Swiper modules from the appropriate sub-path
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'; 
+
+import '@/app/css/SlideShow.css';   // Your custom CSS
 
 interface SlideShowProps {
   slides: React.ReactNode[]; // Accepts an array of React elements (e.g., ProjectCard or images)
 }
 
 export default function SlideShow({ slides }: SlideShowProps) {
-  const settings = {
-    dots: true,
-    infinite: slides.length > 1,  // Disable infinite scroll if only one slide
-    speed: 500,
-    slidesToShow: 1,  // Show one slide at a time
-    slidesToScroll: 1, // Scroll one slide at a time
-    autoplay: slides.length > 1,    // Only autoplay if more than one slide
-    autoplaySpeed: 4000, // Time between transitions (4 seconds)
-    arrows: slides.length > 1,      // Only show arrows if more than one slide
-    prevArrow: <CustomPrevArrow />, // Use custom prev arrow
-    nextArrow: <CustomNextArrow />  // Use custom next arrow
-  };
-  
   return (
     <div className="slideshow-container">
-      <Slider {...settings}>
-        {slides}
-      </Slider>
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}  // Correct path for importing modules
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation={slides.length > 1} // Only show navigation if more than one slide
+        pagination={{ clickable: true }}
+        autoplay={slides.length > 1 ? { delay: 4000 } : false} // Only autoplay if more than one slide
+        loop={false}
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            {slide}
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }
