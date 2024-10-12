@@ -72,7 +72,6 @@ const CarouselItem: React.FC<{ project: Project; index: number; total: number }>
 };
 
 const Carousel: React.FC = () => {
-  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <div style={{ width: "100%", height: "100%"}}>

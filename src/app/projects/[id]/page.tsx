@@ -17,7 +17,7 @@ import ProjectDetailClient from '../../components/ProjectDetailClient';
 // }
 
 async function fetchProject(id: string): Promise<Project | null> {
-    const response = await fetch(`https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects/${id}?acf_format=standard`);
+    const response = await fetch(`https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects/${id}`);
     if (!response.ok) return null;
     const project = await response.json();
     return project;

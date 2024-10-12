@@ -8,7 +8,7 @@ interface ArrowProps {
   onClick?: () => void;
 }
 
-export const CustomPrevArrow = ({ className, style, onClick }: ArrowProps) => (
+export const CustomPrevArrow = ({ className, onClick }: ArrowProps) => (
   <div
     className={className}
     // style={{ ...style, display: 'block', background: 'rgba(0, 0, 0, 0.5)', borderRadius: '50%', padding: '10px' }}
@@ -18,7 +18,7 @@ export const CustomPrevArrow = ({ className, style, onClick }: ArrowProps) => (
   </div>
 );
 
-export const CustomNextArrow = ({ className, style, onClick }: ArrowProps) => (
+export const CustomNextArrow = ({ className, onClick }: ArrowProps) => (
   <div
     className={className}
     // style={{ ...style, display: 'block', background: 'rgba(0, 0, 0, 0.5)', borderRadius: '50%', padding: '10px' }}
