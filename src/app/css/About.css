@@ -1,9 +1,8 @@
-tools {
+.tools {
   display: flex;
-  justify-content: center;
+  flex-wrap:wrap;
   align-items: center;
 }
-
 
 .tools ul {
   list-style-type: none;
@@ -44,3 +43,8 @@ tools {
   color: #ffffff;
   /* Text color */
 }
+
+section{
+  width:100%;
+}
+

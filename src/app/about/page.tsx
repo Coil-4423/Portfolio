@@ -1,12 +1,13 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import React, { useEffect, useState} from "react";
+import { motion} from "framer-motion";
 import Layout from "../components/Layout";
 import LoadingComponent from "../components/LoadingComponent";
 import ToolsSection from "./ToolsSection"; // Import the ToolsSection component
 import "../css/index.css";
 import "../css/About.css";
 import { AboutPageData } from "../types/AboutTypes"; // Import the AboutPageData type
+import { SectionWithAnimation } from "../components/SectionWithAnimation";
 
 const About = () => {
   const [aboutData, setAboutData] = useState<AboutPageData | null>(null); // State to store about page data
@@ -39,34 +40,6 @@ const About = () => {
   // Destructure ACF data
   const { who_i_am, what_i_do, future_goals, tools } = aboutData.acf;
 
-  // Define motion variants for animations
-  const sectionVariant = {
-    hidden: { opacity: 0, y: 50 }, // Start hidden and shifted down
-    visible: { opacity: 1, y: 0 }, // Animate to visible and centered
-  };
-
-  // Generalized Section Component with In-View Animation
-  const SectionWithAnimation = ({
-    children,
-  }: {
-    children: React.ReactNode;
-  }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
-
-    return (
-      <motion.section
-        ref={ref}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        variants={sectionVariant}
-        transition={{ duration: 0.5 }}
-        style={{ overflow: "hidden" }} // Prevent any overflow that could cause unnecessary space
-      >
-        {children}
-      </motion.section>
-    );
-  };
 
   return (
     <Layout>

@@ -1,69 +1,61 @@
 .slideshow-container {
     width: 90%; 
     max-width: 64rem;
+    margin:0 auto;
     /* overflow: hidden; Prevent any overflow from large images */
   }
 
-  .slick-prev, .slick-next {
-    width: fit-content;
-    height:fit-content;
-  }
+.swiper{
+  padding: 0 2rem; /* Add padding to allow space for the buttons */
+  overflow: hidden; /* Retain overflow:hidden if needed */
+  margin: 0 auto;
+}
 
-  /* Target the arrow images for hover effects */
-.arrow-img {
-    width: 2rem;
-    height: 2rem;
-    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
-  }
-  
-  /* Add a scaling effect on hover */
-  .arrow-img:hover {
-    transform: scale(1.2); /* Scale the image slightly when hovered */
-  }
-  
-  
-  /* Remove default arrow text */
-  .slick-prev:before, .slick-next:before {
-    display: none;
-  }
-  
-  
-  .slick-dots {
-    bottom: 10px; /* Adjust the position */
-    text-align: center; /* Align dots */
-  }
-  
-  .slick-dots li button:before {
-    font-size: 12px; /* Size of the dots */
-    color: #00ff11; /* Color of the dots */
-    opacity: 0.75; /* Transparency */
-  }
-  
-  .slick-dots li.slick-active button:before {
-    color: #00ff11; /* Color of active dot */
-    opacity: 1;
-  }
-  
-  .slick-dots li button:before {
-    border-radius: 50%; /* Make dots round */
-    width: 10px;
-    height: 10px;
-  }
-  
-/* Ensure dots are positioned below the slides */
-.slick-dots {
-    position: relative; /* Relative to the container */
-    bottom: 0px; /* Move dots further down */
-    margin-top: 20px; /* Adds space between the slides and dots */
-    z-index: 1; /* Ensure they are not hidden by the slides */
-  }
-  
-  /* Optional: Style for the container if more padding is needed */
-  .slick-slider {
-    padding-bottom: 50px; /* Add space at the bottom for dots */
-  }
-  
-  /* You can further adjust the slick-list container if needed */
-  .slick-list {
-    margin-bottom: 40px; /* Adjust the spacing below the slides */
-  }
+  /* Reposition the Swiper pagination dots below the slider */
+.swiper-pagination {
+  margin-top:1rem;
+  text-align: center; /* Center the dots */
+  position: relative; /* Ensure it's outside of the swiper container */
+}
+
+/* Customize the appearance of the dots */
+.swiper-pagination-bullet {
+  background-color: #00ff11; /* Your custom color for the pagination dots */
+  opacity: 0.75; /* Slight transparency */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #00ff11; /* Active dot color */
+  opacity: 1;
+}
+/* Ensure buttons are visible */
+.swiper-button-prev, .swiper-button-next {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  z-index: 10; /* Ensure they are above the images */
+  width: 3rem; /* Set the width of the buttons */
+  height: 3rem; /* Set the height of the buttons */
+  color: #00ff11; /* Set a visible color for the buttons */
+  transform: translateY(-50%); /* Center the buttons vertically */
+  cursor: pointer;
+}
+
+/* Move the buttons outside of the image area */
+.swiper-button-prev {
+  left: -0.8rem; /* Adjust this value to move the button to the left */
+}
+
+.swiper-button-next {
+  right: -0.8rem; /* Adjust this value to move the button to the right */
+}
+
+/* Optional: Hover effect for the buttons */
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  color: #ffcc00; /* Change the button color on hover */
+}
+
+
+/* Optional: Adjust the slideshow container for extra padding */
+.slideshow-container {
+  padding-bottom: 40px; /* Add some padding below for pagination */
+}

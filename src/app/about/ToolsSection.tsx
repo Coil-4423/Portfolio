@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { ACFFields} from '../types/AboutTypes';
 import React, { useRef } from 'react';
+import '@/app/css/Tools.css'
 
 
 // Define animation variants for each tool with puzzle effect
@@ -21,7 +22,6 @@ const ToolsSection: React.FC<ACFFields> = ({ tools = []}) => {
       ref={ref} // Attach the ref to the section
       initial="hidden"
       animate={isInView ? 'visible' : 'hidden'} // Start animation when in view
-      style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
     >
       <h2>Tools</h2>
       <motion.ul className="tools-list" style={{ display: 'flex', flexWrap: 'wrap', listStyle: 'none' }}>
@@ -33,7 +33,6 @@ const ToolsSection: React.FC<ACFFields> = ({ tools = []}) => {
             initial="hidden" // Start with hidden state
             animate={isInView ? "visible" : "hidden"} // Animate only when in view
             transition={{ delay: index * 0.2, duration: 0.8 }}  // Staggered delay for puzzle effect
-            style={{ display: 'inline-block'}}
           >
             <Image
               src={tool.tool_image.url}

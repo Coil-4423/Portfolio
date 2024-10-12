@@ -26,7 +26,7 @@ const PuzzleText: React.FC = () => {
   const developerStartIndex: number = text.indexOf("Developer");
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', width: '100%' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
       <div style={{ fontSize: '4rem', fontWeight: 'bold', position: 'relative' }}>
         {letters.map((letter, index) => {
           const { x, y } = positions[index] || { x: 0, y: 0 };
