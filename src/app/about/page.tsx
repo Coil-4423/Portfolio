@@ -43,6 +43,7 @@ const About = () => {
 
   return (
     <Layout>
+      <div className="about">
       {loading ? (
         <LoadingComponent />
       ) : (
@@ -70,6 +71,7 @@ const About = () => {
           </SectionWithAnimation>
         </motion.main>
       )}
+      </div>
     </Layout>
   );
 };

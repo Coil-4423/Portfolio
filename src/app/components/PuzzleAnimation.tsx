@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import '../css/PuzzleAnimation.css'; // Import the CSS file
 
 const PuzzleText: React.FC = () => {
   const text: string = "React/Next.js Developer";
@@ -26,13 +27,13 @@ const PuzzleText: React.FC = () => {
   const developerStartIndex: number = text.indexOf("Developer");
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-      <div style={{ fontSize: '4rem', fontWeight: 'bold', position: 'relative' }}>
+    <div className="puzzle-container">
+      <div className="puzzle-text">
         {letters.map((letter, index) => {
           const { x, y } = positions[index] || { x: 0, y: 0 };
           const letterColor: string = index >= developerStartIndex && index < developerStartIndex + "Developer".length
-            ? '#00ff11'
-            : 'white';
+            ? 'developer-text'
+            : 'default-text';
 
           return (
             <motion.span
@@ -40,7 +41,7 @@ const PuzzleText: React.FC = () => {
               initial={{ x, y, opacity: 0 }}
               animate={animate ? { x: 0, y: 0, opacity: 1 } : {}}
               transition={{ delay: index * 0.1, duration: 0.8 }}
-              style={{ display: 'inline-block', color: letterColor, marginRight: letter === ' ' ? '0.5rem' : '0rem' }}
+              className={`letter ${letterColor}`}
             >
               {letter === ' ' ? '\u00A0' : letter}
             </motion.span>

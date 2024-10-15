@@ -10,8 +10,9 @@ import ProjectCard from "./components/ProjectCard";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Project } from "./types/ProjectTypes";
-import { motion } from "framer-motion";
 import { SectionWithAnimation } from "./components/SectionWithAnimation";
+import CoolButton from "./components/CoolButton";
+
 
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -49,6 +50,7 @@ export default function Home() {
           <PuzzleText></PuzzleText>
           <Contact></Contact>
           <SectionWithAnimation>
+            <h2>Skills</h2>
             <SkillsCarousel></SkillsCarousel>
             <div className="about-link">
               <Link href="/about" passHref>
@@ -57,6 +59,7 @@ export default function Home() {
             </div>
           </SectionWithAnimation>
           <SectionWithAnimation>
+          <h2>Featured Works</h2>
             <SlideShow slides={projectSlides}></SlideShow>
             <div className="projects-link">
               <Link href="/projects" passHref>

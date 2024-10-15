@@ -5,3 +5,11 @@
     align-items: center;
     margin:2rem 0;
 }
+
+.contact-item a{
+    margin: 1rem;
+}
+
+.email-item a{
+    margin: 1rem;
+}

@@ -1,47 +1,8 @@
-.tools {
+.about{
   display: flex;
-  flex-wrap:wrap;
-  align-items: center;
-}
-
-.tools ul {
-  list-style-type: none;
-  /* Remove default bullets */
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  /* Allow multiple items per row */
-  gap: 10px;
-  /* Adjust space between items */
-}
-
-.tools li {
-  display: inline-flex;
-  /* Inline layout for logo and text */
-  align-items: center;
-  /* Align image and text vertically */
-  padding: 10px;
-  background-color: #b2b2b2;
-  /* Optional background for better visibility */
-  border-radius: 5px;
-  /* Optional: Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Optional: Shadow */
-}
-
-.tools li img {
-  width: 40px;
-  /* Adjust the logo size as needed */
-  height: auto;
-  margin-right: 10px;
-  /* Space between the icon and the text */
-}
-
-.tools li span {
-  font-size: 16px;
-  /* Adjust the font size */
-  color: #ffffff;
-  /* Text color */
+  flex-direction: column;
+  max-width: 64rem;
+  margin:0 auto;
 }
 
 section{

@@ -4,8 +4,7 @@ import Image from "next/image";
 import LoadingComponent from "../components/LoadingComponent";
 import "../css/ContactLinks.css";
 import "../css/index.css"; // Define types for API response and ACF fields
-import '../css/Footer.css'; // Import any custom CSS if necessary
-
+import "../css/Footer.css"; // Import any custom CSS if necessary
 
 interface Contact {
   contact_url?: string;
@@ -36,7 +35,6 @@ const Footer = () => {
   const [contactData, setContactData] = useState<ContactData | null>(null);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
     fetch("https://sumitake.ca/portfolio-data/wp-json/wp/v2/pages?slug=contact")
       .then((response) => response.json())
@@ -63,48 +61,52 @@ const Footer = () => {
 
   const { contact, email, email_icon } = contactData.acf;
 
-
   return (
-    <footer className="footer">
-      <div className="footer-icons">
+    <footer>
       <div>
-      {loading ? (
-        <LoadingComponent />
-      ) : (
-        <section className="contact">
-          {contact &&
-            contact.map((contact, index) => (
-              <div key={index} className="contact-item">
-                {contact.contact_url && (
-                  <a href={contact.contact_url} target="_blank" rel="noopener noreferrer">
+      <p>© 2024 Takehito Sumimura</p>
+
+      </div>
+      <div className="footer-icons">
+          {loading ? (
+            <LoadingComponent />
+          ) : (
+            <section className="contact">
+              {contact &&
+                contact.map((contact, index) => (
+                  <div key={index} className="contact-item">
+                    {contact.contact_url && (
+                      <a
+                        href={contact.contact_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          src={contact.contact_icon.url}
+                          alt={contact.contact_icon.alt || "contact"}
+                          width={50}
+                          height={50}
+                        />
+                      </a>
+                    )}
+                  </div>
+                ))}
+              {/* Rendering the email and email icon */}
+              {email && email_icon && (
+                <div className="email-item">
+                  <a href={`mailto:${email}`}>
                     <Image
-                      src={contact.contact_icon.url}
-                      alt={contact.contact_icon.alt || "contact"}
+                      src={email_icon.url}
+                      alt={email_icon.alt || "email"}
                       width={50}
                       height={50}
                     />
                   </a>
-                )}
-              </div>
-            ))}
-          {/* Rendering the email and email icon */}
-          {email && email_icon && (
-            <div className="email-item">
-              <a href={`mailto:${email}`}>
-                <Image
-                  src={email_icon.url}
-                  alt={email_icon.alt || "email"}
-                  width={50}
-                  height={50}
-                />
-              </a>
-            </div>
+                </div>
+              )}
+            </section>
           )}
-        </section>
-      )}
-    </div>
       </div>
-      <p>© 2024 Takehito Sumimura</p>
     </footer>
   );
 };

@@ -49,7 +49,6 @@
     }
   
     .tool-item {
-      margin: 0.5rem 1rem; /* Reduce margin for better spacing on smaller screens */
       padding: 8px; /* Reduce padding inside the tool items */
       border-radius: 8px; /* Slightly rounded corners */
     }

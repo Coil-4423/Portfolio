@@ -1,0 +1,36 @@
+/* .link-button{
+    width: 100%;
+} */
+
+.link-button a {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    margin: 2rem auto;
+  }
+  
+  .link-button a {
+    border: solid 2px white;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    text-align: center;
+    display: inline-block; /* Ensures link behaves like a block-level element */
+    background-color: rgba(0, 0, 0, 0.5); /* Add background color for visibility */
+    position: relative; /* Required for pseudo-element */
+    transition: border-color 0.5s ease;
+  }
+  
+  .link-button a:hover {
+    animation: rainbow-border 1.5s linear infinite; /* Infinite animation on hover */
+  }
+  
+  @keyframes rainbow-border {
+    0% { border-color: red; }
+    16.6% { border-color: orange; }
+    33.3% { border-color: yellow; }
+    50% { border-color: green; }
+    66.6% { border-color: blue; }
+    83.3% { border-color: indigo; }
+    100% { border-color: violet; }
+  }
+  

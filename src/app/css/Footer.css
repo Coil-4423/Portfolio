@@ -1,27 +1,62 @@
 /* Footer */
 footer {
-    background-color: #1a1a1a;
-    color: white;
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    margin-top: auto; /* Ensures footer sticks to the bottom */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.404); /* Add a subtle top border */
+  color: #fff; /* White text color for contrast */
+  box-sizing: border-box; /* Ensure padding and border are accounted for in the size */
+  overflow: hidden; /* Prevent content overflow */
 }
-  
+
+/* Footer Text */
+footer p {
+  font-size: 14px;
+  color: #aaa; /* Softer color for text */
+  margin: 0; /* Remove margin for proper alignment */
+}
+
+/* Footer Icons */
+.footer-icons {
+  display: flex;
+  gap: 1rem; /* Spacing between icons */
+  align-items: center;
+}
+
+/* Icon Styling */
+.contact-item img,
+.email-item img {
+  width: 40px; /* Increase icon size for better visibility */
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.contact-item img:hover,
+.email-item img:hover {
+  transform: scale(1.2); /* Slight zoom on hover */
+  filter: brightness(1.5); /* Brighten the icon on hover */
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 48rem) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
   .footer-icons {
-    display: flex;
-    gap: 10px;
+    justify-content: center;
+    margin-top: 1rem;
   }
-  
-  .footer .icon {
-    width: 32px;
-    height: 32px;
+
+  footer p {
+    font-size: 12px;
+    color: #bbb;
   }
-  
-  .footer p {
-    font-size: 14px;
-    color: #555;
-  }
-  
+}

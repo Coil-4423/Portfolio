@@ -1,8 +1,9 @@
 .slideshow-container {
-    width: 90%; 
+    width: 100%; 
     max-width: 64rem;
     margin:0 auto;
     /* overflow: hidden; Prevent any overflow from large images */
+    margin-top:2rem;
   }
 
 .swiper{
@@ -28,6 +29,7 @@
   background-color: #00ff11; /* Active dot color */
   opacity: 1;
 }
+
 /* Ensure buttons are visible */
 .swiper-button-prev, .swiper-button-next {
   position: absolute;
@@ -54,8 +56,12 @@
   color: #ffcc00; /* Change the button color on hover */
 }
 
+@media  (max-width:48rem) {
+  .swiper{
+    padding:0;
+  }
 
-/* Optional: Adjust the slideshow container for extra padding */
-.slideshow-container {
-  padding-bottom: 40px; /* Add some padding below for pagination */
+  .swiper-button-prev, .swiper-button-next {
+    display: none;
+  }
 }

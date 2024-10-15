@@ -10,13 +10,13 @@
 
 .links{
     width:100%;
-    display:flex;
+    display:grid;
+    grid-template-columns: auto auto;
 }
 
-.links a{
-    margin:2rem;
-    border:solid 2px white;
-    padding:1rem;
+.links .link-button{
+    margin:0 auto;
+
 }
 
 /* Aspect ratio container */

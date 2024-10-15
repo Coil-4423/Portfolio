@@ -1,0 +1,56 @@
+/* PuzzleText container */
+.puzzle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Text container with font size and styling for mobile first */
+.puzzle-text {
+  font-size: 2rem; /* Smaller font size for mobile */
+  font-weight: bold;
+  position: relative;
+}
+
+/* Default letter styling */
+.letter {
+  display: inline-block;
+  margin-right: 0rem; /* Adjusts for non-space letters */
+}
+
+.letter.space {
+  margin-right: 0.3rem; /* Smaller space between words for mobile */
+}
+
+/* White text for default */
+.default-text {
+  color: white;
+}
+
+/* Green color for 'Developer' */
+.developer-text {
+  color: #00ff11;
+}
+
+/* Desktop styles - for larger screens */
+@media (min-width: 768px) {
+  .puzzle-text {
+    font-size: 3rem; /* Adjust font size for tablets and small desktops */
+  }
+
+  .letter.space {
+    margin-right: 0.4rem; /* Adjust space between letters for tablets */
+  }
+}
+
+/* Larger desktop styles */
+@media (min-width: 1024px) {
+  .puzzle-text {
+    font-size: 4rem; /* Larger font size for desktops */
+  }
+
+  .letter.space {
+    margin-right: 0.5rem; /* Larger space between letters for desktops */
+  }
+}
