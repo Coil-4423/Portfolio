@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import LoadingComponent from "../components/LoadingComponent";
 import "../css/ContactLinks.css";
 import "../css/index.css";
+import { ContactData } from "../types/ContactTypes";
 
 
 
