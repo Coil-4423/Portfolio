@@ -12,6 +12,7 @@ html, body {
   flex-direction: column;
   box-sizing: border-box;
   overflow-x: hidden;
+  overflow-y:auto ;
   color: #ffffff; /* Default text color */
 }
 
@@ -154,6 +155,7 @@ button:focus-visible {
   justify-content: center;
   width: 100%;
   height: 100%;
+  margin:1rem 0;
 }
 
 /* Responsive typography and padding - tablet and small desktop */

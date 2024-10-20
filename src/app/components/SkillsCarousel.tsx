@@ -47,6 +47,7 @@ const SkillsCarousel: React.FC = () => {
             <Image
               src={tool.tool_image.url}
               alt={tool.tool_name}
+              className='tool-image'
               width={80}
               height={80}
             />

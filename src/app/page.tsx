@@ -11,15 +11,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Project } from "./types/ProjectTypes";
 import { SectionWithAnimation } from "./components/SectionWithAnimation";
-import CoolButton from "./components/CoolButton";
-
 
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
+
   // Scroll to the top when the component mounts
   useEffect(() => {
-    window.scrollTo(0, 0); // This will set the scroll position to the top (x=0, y=0)
-  }, []); // Empty dependency array ensures this runs only on mount
+    window.scrollTo(0, 0); 
+  }, []);
 
   useEffect(() => {
     fetch(
@@ -37,12 +36,12 @@ export default function Home() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  const projectSlides = projects.map((project, index) => (
+  // Limit the number of featured projects to 2
+  const featuredProjects = projects.slice(0, 2).map((project, index) => (
     <ProjectCard key={project.id} project={project} index={index} />
   ));
 
   return (
-    // <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
     <Layout>
       <main>
         <div className="landing-page">
@@ -59,8 +58,8 @@ export default function Home() {
             </div>
           </SectionWithAnimation>
           <SectionWithAnimation>
-          <h2>Featured Works</h2>
-            <SlideShow slides={projectSlides}></SlideShow>
+            <h2>Featured Works</h2>
+            <SlideShow slides={featuredProjects}></SlideShow>
             <div className="projects-link">
               <Link href="/projects" passHref>
                 See all the projects
@@ -70,6 +69,5 @@ export default function Home() {
         </div>
       </main>
     </Layout>
-    // </main>
   );
 }

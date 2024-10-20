@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link'; // Import for navigation using Next.js
 import '../css/header.css'; // Import your CSS file
+import Image from 'next/image';
 
 const NavBar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false); // State to manage hamburger menu
@@ -33,7 +34,15 @@ const NavBar: React.FC = () => {
   return (
     <>
       <div className="logo">
-        <Link href="/">My Portfolio</Link>
+        <Link href="/"><Image 
+            src="/logo.svg" 
+            alt="My Portfolio Logo" 
+            className='logo-image'
+            width={80} 
+            height={80} 
+            priority // Ensures it loads quickly
+          />
+        </Link>
       </div>
 
       {/* Wrap the nav and hamburger in a div with the ref */}

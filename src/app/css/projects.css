@@ -59,14 +59,9 @@
 article{
     display: flex;
     flex-direction: column;
-
-    padding:1rem;
     margin:1rem;
 }
 
-
-/* animation when hover */
-/* Zoom effect on hover */
 .project-card:hover {
     transform: scale(1.1); /* Zooms in the entire card */
 }
@@ -80,22 +75,6 @@ article{
     transform: scale(1.1); /* Zooms in the image on hover */
 }
 
-/* Styling for the More Info link */
-.project-card a {
-    color: #3b82f6; /* Original blue color */
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-.project-card:hover a {
-    color: #1d4ed8; /* Darker blue when hovered */
-}
-
-/* Adjust spacing and layout */
-.project-card article {
-    padding: 16px;
-}
-
 .project-card h3 {
     margin: 0 0 10px 0;
     font-size: 1.5rem;
@@ -104,5 +83,5 @@ article{
 .project-card p {
     margin-bottom: 10px;
     font-size: 1rem;
-    color: #555;
+    /* color: #555; */
 }

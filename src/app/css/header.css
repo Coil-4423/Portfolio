@@ -15,116 +15,146 @@
     border:white;
     border-radius:20px;
   } */
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    background-color:rgba(0, 0, 0, 0.504);
-    /* margin-left:1rem; */
-    position:fixed;
-    z-index:100;
-    left:5%;
-    top:1rem;
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0);
+  /* margin-left:1rem; */
+  position: fixed;
+  z-index: 100;
+  left: 5%;
+  top: 1rem;
+}
+
+@media (max-width:500px){
+  .logo-image{
+    width:50px;
+    height:50px;
   }
-  
-  /* .nav {
+}
+
+
+/* .nav {
     display: none;
   } */
-  
-  .nav {
-    -webkit-transform: translateY(-200%); /* Hidden off-screen initially */
-    transform: translateY(-200%); /* Hidden off-screen initially */
-    position: fixed;
-    top: 3.5rem;
-    right: 5%;
-    width: 200px;
-    background-color: rgba(0, 0, 0, 0.498); /* Semi-transparent black */
-    backdrop-filter: blur(10px); /* Apply the blur effect */
-    transition: transform 0.3s ease-out; /* Smooth transition for transform */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius:10px;
-    z-index:100;
+
+.nav {
+  -webkit-transform: translateY(-200%);
+  /* Hidden off-screen initially */
+  transform: translateY(-200%);
+  /* Hidden off-screen initially */
+  position: fixed;
+  top: 3.5rem;
+  right: 5%;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.498);
+  /* Semi-transparent black */
+  backdrop-filter: blur(10px);
+  /* Apply the blur effect */
+  transition: transform 0.3s ease-out;
+  /* Smooth transition for transform */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  z-index: 100;
 }
 
 /* When the nav is open */
 .nav.open {
-    -webkit-transform: translateY(0); /* Bring the menu into view */
-    transform: translateY(0); /* Bring the menu into view */
+  -webkit-transform: translateY(0);
+  /* Bring the menu into view */
+  transform: translateY(0);
+  /* Bring the menu into view */
 }
 
-  
-  .nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    width:100%;
-    text-align: center;
-  }
-  /* .nav-links li:hover {
-    background-color: darkgray;
-  } */
-  .nav-links li a:hover {
-    color: darkgray;
-  }
-  
-  .nav-links li {
-    padding: 10px;
-  }
 
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+/* .nav-links li:hover {
+    background-color: rgb(255, 255, 255);
+  } */
+.nav-links li a:hover {
+  color: rgb(0, 0, 0);
+}
+
+.nav-links li {
+  width: 100%; /* Ensure the <li> takes full width */
+  box-sizing: border-box; /* Prevents padding from increasing width */
+}
+
+.nav-links li a {
+  display: block; /* Make <a> behave like a block element */
+  width: 100%; /* Make <a> take the full width of its parent <li> */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 0; /* Optional: add vertical padding */
+}
+
+.nav-links li a:hover {
+  color: darkgray;
+}
+
+
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 24px; 
-    cursor: pointer;
-    z-index: 100;
-    position: fixed;
-    top: 1rem;
-    right: 5%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 5px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for elevation */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 100;
+  position: fixed;
+  top: 1rem;
+  right: 5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /* Add a subtle shadow for elevation */
 }
 
 .bar {
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 
 /* Open Hamburger Menu (X Symbol) */
 .hamburger.open .bar:nth-child(1) {
-    transform: rotate(45deg) translate(7.5px, 7.5px); /* Reduced translate for better symmetry */
+  transform: rotate(45deg) translate(7.5px, 7.5px);
+  /* Reduced translate for better symmetry */
 }
 
 .hamburger.open .bar:nth-child(2) {
-    opacity: 0; /* Hide the middle bar */
+  opacity: 0;
+  /* Hide the middle bar */
 }
 
 .hamburger.open .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(7.5px, -7.5px); /* Symmetrical adjustment */
+  transform: rotate(-45deg) translate(7.5px, -7.5px);
+  /* Symmetrical adjustment */
 }
 
-  
-  /* For Desktop view */
-  /* @media (min-width: 768px) {
+
+/* For Desktop view */
+/* @media (min-width: 768px) {
     .nav {
       display: flex;
     }
@@ -132,4 +162,3 @@
       display: none;
     }
   } */
-  
