@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import "@/app/css/projects.css";
 import { Project } from "../types/ProjectTypes";

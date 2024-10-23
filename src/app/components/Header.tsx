@@ -36,7 +36,7 @@ const NavBar: React.FC = () => {
       <div className="logo">
         <Link href="/"><Image 
             src="/take.png" 
-            alt="Takehito Logo" 
+            alt="Logo" 
             className='logo-image'
             width={60} 
             height={60} 

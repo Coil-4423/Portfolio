@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import Layout from "../components/Layout";
 import LoadingComponent from "../components/LoadingComponent";
 import ToolsSection from "./ToolsSection"; // Import the ToolsSection component
@@ -8,7 +7,6 @@ import "../css/index.css";
 import "../css/About.css";
 import { AboutPageData } from "../types/AboutTypes"; // Import the AboutPageData type
 import { SectionWithAnimation } from "../components/SectionWithAnimation";
-import { div } from "framer-motion/client";
 
 const About = () => {
   const [aboutData, setAboutData] = useState<AboutPageData | null>(null); // State to store about page data

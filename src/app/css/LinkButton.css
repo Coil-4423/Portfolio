@@ -8,17 +8,6 @@
     height: fit-content;
     margin: 2rem auto;
   }
-
-  .link-button a {
-    border: solid 2px white;
-    border-radius: 5px;
-    padding: 1rem 2rem;
-    text-align: center;
-    display: inline-block; /* Ensures link behaves like a block-level element */
-    background-color: rgba(0, 0, 0, 0.5); /* Add background color for visibility */
-    position: relative; /* Required for pseudo-element */
-    transition: border-color 0.5s ease;
-  }
   
 
   .link-with-arrow{
