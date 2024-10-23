@@ -35,11 +35,11 @@ const NavBar: React.FC = () => {
     <>
       <div className="logo">
         <Link href="/"><Image 
-            src="/logo.svg" 
-            alt="My Portfolio Logo" 
+            src="/take.png" 
+            alt="Takehito Logo" 
             className='logo-image'
-            width={80} 
-            height={80} 
+            width={60} 
+            height={60} 
             priority // Ensures it loads quickly
           />
         </Link>

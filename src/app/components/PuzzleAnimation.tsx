@@ -28,7 +28,7 @@ const PuzzleText: React.FC = () => {
 
   return (
     <div className="puzzle-container">
-      <div className="puzzle-text">
+      <p className="puzzle-text">
         {letters.map((letter, index) => {
           const { x, y } = positions[index] || { x: 0, y: 0 };
           const letterColor: string = index >= developerStartIndex && index < developerStartIndex + "Developer".length
@@ -47,7 +47,7 @@ const PuzzleText: React.FC = () => {
             </motion.span>
           );
         })}
-      </div>
+      </p>
     </div>
   );
 };

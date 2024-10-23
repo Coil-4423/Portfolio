@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import "@/app/css/projects.css";
 import { Project } from "../types/ProjectTypes";
 import '../css/LinkButton.css'
+import LinkWithArrow from "./LinkeWithArrow";
 
 const ProjectCard = ({
   project,
@@ -40,7 +41,8 @@ const ProjectCard = ({
         <p>{project.acf.description}</p>
         {/* Link to the individual project page */}
         <div className="link-button">
-          <Link href={`/projects/${project.id}`}>More Info</Link>
+          {/* <Link href={`/projects/${project.id}`}>More Info</Link> */}
+          <LinkWithArrow href={`/projects/${project.id}`}>More Info</LinkWithArrow>
         </div>
       </article>
     </motion.div>

@@ -10,6 +10,7 @@ import { Project } from "../types/ProjectTypes";
 import ToolsSection from "../about/ToolsSection";
 import "@/app/css/LinkButton.css";
 import { SectionWithAnimation } from "./SectionWithAnimation";
+import LinkWithArrow from "./LinkeWithArrow";
 
 export default function ProjectDetailClient({ project }: { project: Project }) {
   console.log(project.acf);

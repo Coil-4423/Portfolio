@@ -8,7 +8,7 @@
     height: fit-content;
     margin: 2rem auto;
   }
-  
+
   .link-button a {
     border: solid 2px white;
     border-radius: 5px;
@@ -20,8 +20,38 @@
     transition: border-color 0.5s ease;
   }
   
+
+  .link-with-arrow{
+    border: solid 2px white;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: border-color 0.5s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media (max-width:600px){
+    .link-with-arrow{
+        padding:0.5rem;
+    }
+  }
+
+  .link-with-arrow:hover .arrow{
+    transform: translateX(5px); /* Smooth move to the right */
+  }
+  
+  
   .link-button a:hover {
     animation: rainbow-border 1.5s linear infinite; /* Infinite animation on hover */
+  }
+
+  .arrow{
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease-in-out;
+    margin-left:1rem;
   }
   
   @keyframes rainbow-border {

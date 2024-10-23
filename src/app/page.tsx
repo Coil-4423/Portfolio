@@ -11,13 +11,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Project } from "./types/ProjectTypes";
 import { SectionWithAnimation } from "./components/SectionWithAnimation";
+import LinkWithArrow from "./components/LinkeWithArrow";
 
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
 
   // Scroll to the top when the component mounts
   useEffect(() => {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
@@ -37,33 +38,33 @@ export default function Home() {
   }, []);
 
   // Limit the number of featured projects to 2
-  const featuredProjects = projects.slice(0, 2).map((project, index) => (
-    <ProjectCard key={project.id} project={project} index={index} />
-  ));
+  const featuredProjects = projects
+    .slice(0, 2)
+    .map((project, index) => (
+      <ProjectCard key={project.id} project={project} index={index} />
+    ));
 
   return (
     <Layout>
       <main>
         <div className="landing-page">
-          <p>Hello, I&apos;m Takehito Sumimura. A passionate Web Developer.</p>
+          <p className="intro-text">
+            <span className="name">Takehito Sumimura</span>
+          </p>
           <PuzzleText></PuzzleText>
           <Contact></Contact>
           <SectionWithAnimation>
             <h2>Skills</h2>
             <SkillsCarousel></SkillsCarousel>
             <div className="about-link">
-              <Link href="/about" passHref>
-                More about me
-              </Link>
+              <LinkWithArrow href="/about">More about me</LinkWithArrow>
             </div>
           </SectionWithAnimation>
           <SectionWithAnimation>
             <h2>Featured Works</h2>
             <SlideShow slides={featuredProjects}></SlideShow>
             <div className="projects-link">
-              <Link href="/projects" passHref>
-                See all the projects
-              </Link>
+              <LinkWithArrow href="/projects">See all projects</LinkWithArrow>
             </div>
           </SectionWithAnimation>
         </div>

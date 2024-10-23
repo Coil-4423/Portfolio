@@ -1,9 +1,10 @@
 /* Importing fonts from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap'); */
+
 
 /* Base styling for html and body */
 html, body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Oxanium", sans-serif !important;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -19,7 +20,7 @@ html, body {
 /* Body layout */
 body {
   justify-content: flex-start;
-  min-width: 320px;
+  /* min-width: 320px; */
   min-height: 100vh;
   place-items: center;
 }
@@ -48,7 +49,7 @@ main {
 
 /* Headings - mobile-first */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   color: #fff;
   margin: 0;
 }
@@ -125,14 +126,19 @@ button:focus-visible {
   height: fit-content;
 }
 
-.about-link a, .projects-link a {
-  border: solid 2px white;
-  border-radius: 5px;
-  padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: border-color 0.5s ease;
+
+.about-link a:hover, .projects-link a:hover {
+  animation: rainbow-border 1.5s linear infinite;
 }
 
+
+
+/* Hover Effect */
+.about-link a:hover .arrow, .projects-link a:hover .arrow {
+  transform: translateX(5px); /* Smooth move to the right */
+}
+
+/* Hover Animation: Rainbow Border */
 .about-link a:hover, .projects-link a:hover {
   animation: rainbow-border 1.5s linear infinite;
 }
@@ -187,4 +193,33 @@ button:focus-visible {
   h1 { font-size: 3.5rem; line-height: 1.1; }
   h2 { font-size: 3rem; line-height: 1.1; }
   h3 { font-size: 2.5rem; line-height: 1.2; }
+}
+
+/* Styling the Name */
+.name {
+  font-size: 2.5rem; /* Emphasize the name with larger font size */
+  font-weight: 600; /* Make it bolder for emphasis */
+}
+
+/* Job Title Styling */
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 300; /* Light font weight for a subtle appearance */
+  color: #ccc; /* Lighter color for distinction */
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .intro-text {
+    font-size: 1.8rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .job-title {
+    font-size: 1.2rem;
+  }
 }

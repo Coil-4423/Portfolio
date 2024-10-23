@@ -7,7 +7,7 @@ footer {
   width: 100%;
   max-width: 64rem;
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.404); /* Add a subtle top border */
   color: #fff; /* White text color for contrast */
   box-sizing: border-box; /* Ensure padding and border are accounted for in the size */
