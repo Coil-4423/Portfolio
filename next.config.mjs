@@ -6,7 +6,6 @@ const nextConfig = {
     domains: ['sumitake.ca'],  // Allow images from specific domains
     unoptimized: true,         // Disable Image Optimization for static export
   },
-  output: 'export',        // Ensure the site is exported as static files
   trailingSlash: true,     // Add trailing slashes to all paths for static hosting compatibility
 };
 
