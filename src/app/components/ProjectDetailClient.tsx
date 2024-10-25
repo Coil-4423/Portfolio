@@ -12,9 +12,6 @@ import "@/app/css/LinkButton.css";
 import { SectionWithAnimation } from "./SectionWithAnimation";
 
 export default function ProjectDetailClient({ project }: { project: Project }) {
-  console.log(project.acf);
-  console.log([project.acf.tools]);
-  console.log(typeof project.acf.tools);
 
   // Conditionally check if the gallery exists before mapping over it
   const projectSlides =
@@ -24,8 +21,8 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
             <Image
               src={image.url}
               alt={`project image ${index}`}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: 'cover' }}
               quality={100}
             />
           </div>
@@ -47,6 +44,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
                     href={project.acf.github_repository_link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="link-with-arrow"
                   >
                     <strong>GitHub</strong>
                   </a>
@@ -60,6 +58,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
                     href={project.acf.live_site_link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="link-with-arrow"
                   >
                     <strong>Live Site</strong>
                   </a>

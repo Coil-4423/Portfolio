@@ -36,7 +36,6 @@ const Portfolio: React.FC = () => {
             .then(response => response.json())
             .then(data => {
                 // Check if the data is an array and then set it to state
-                console.log(data)
                 if (Array.isArray(data)) {
                     setPortfolioItems(data); // Update state with the fetched data
                 } else {

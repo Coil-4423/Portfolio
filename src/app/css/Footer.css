@@ -7,6 +7,7 @@ footer {
   width: 100%;
   max-width: 64rem;
   margin: 0 auto;
+  margin-bottom:0;
   padding: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.404); /* Add a subtle top border */
   color: #fff; /* White text color for contrast */

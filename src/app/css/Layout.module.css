@@ -3,6 +3,7 @@
     background-size: 400% 400%; /* Make the background larger to allow movement */
     width: 100%;
     display: flex;
+    flex-grow:1;
     flex-direction: column;
     position: relative; /* Allow the background animation to be fixed, but still scrollable */
     z-index: 1; /* Keep content above the background animation */

@@ -16,7 +16,6 @@ const Projects = () => {
             .then(data => {
                 if (Array.isArray(data)) {
                     setProjects(data);
-                    console.log(data);
                 } else {
                     console.error("Unexpected response format", data);
                 }

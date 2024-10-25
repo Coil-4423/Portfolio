@@ -41,7 +41,6 @@ const Footer = () => {
       .then((data) => {
         if (data && data.length > 0) {
           setContactData(data[0]);
-          console.log(data[0]);
         }
         setLoading(false);
       })

@@ -20,8 +20,7 @@ html, body {
 /* Body layout */
 body {
   justify-content: flex-start;
-  /* min-width: 320px; */
-  min-height: 100vh;
+
   place-items: center;
 }
 
@@ -31,7 +30,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 /* Main content section */
@@ -49,9 +48,8 @@ main {
 
 /* Headings - mobile-first */
 h1, h2, h3, h4, h5, h6 {
-  /* font-family: 'Montserrat', sans-serif; */
   color: #fff;
-  margin: 0;
+  margin: 1rem 0;
 }
 
 h1 { font-size: 2rem; line-height: 1.3; }

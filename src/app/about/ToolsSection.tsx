@@ -14,7 +14,6 @@ const toolVariant = {
 const ToolsSection: React.FC<ACFFields> = ({ tools = []}) => {
   const ref = useRef(null); // Create a ref for the section
   const isInView = useInView(ref, { once: true, margin: '0px 0px -100px 0px' }); // Track when the section is in view
-  console.log(tools)
 
   return (
     <motion.section
