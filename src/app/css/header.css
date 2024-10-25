@@ -22,6 +22,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   /* margin-left:1rem; */
   position: fixed;
+  border-radius: 5px;
   z-index: 100;
   left: 5%;
   top: 1rem;

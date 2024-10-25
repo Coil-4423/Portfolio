@@ -1,6 +1,6 @@
 /* PuzzleText container */
 .puzzle-container {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -12,6 +12,11 @@
   font-size: 2rem; /* Smaller font size for mobile */
   font-weight: bold;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right:1rem;
 }
 
 /* Default letter styling */
@@ -36,6 +41,10 @@
 
 /* Desktop styles - for larger screens */
 @media (min-width: 768px) {
+  .puzzle-container{
+    display: flex;
+  }
+
   .puzzle-text {
     font-size: 3rem; /* Adjust font size for tablets and small desktops */
   }

@@ -53,7 +53,7 @@
 
 /* Optional: Hover effect for the buttons */
 .swiper-button-prev:hover, .swiper-button-next:hover {
-  color: #ffcc00; /* Change the button color on hover */
+  color: #b7ff00; /* Change the button color on hover */
 }
 
 @media  (max-width:48rem) {
