@@ -1,35 +1,36 @@
-// src/app/projects/[id]/page.tsx
+// src/app/projects/[id]/page.tsx (server component)
 
 import { Project } from '@/app/types/ProjectTypes';
 import ProjectDetailClient from '../../components/ProjectDetailClient';
 
-// Fetch project data with force-cache and optional revalidation
+// Fetch project data without caching (ensures fresh data every time)
 async function fetchProject(id: string): Promise<Project | null> {
-  const response = await fetch(`https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects/${id}?acf_format=standard`, {
-    cache: "force-cache",  
-    next: { revalidate: 60 }, // Revalidate every 60 seconds
-  });
-
-  if (!response.ok) return null;
-  return await response.json();
+    const response = await fetch(`https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects/${id}?acf_format=standard`, {
+        cache: "no-store"  // Ensure no caching is used
+    });
+    if (!response.ok) return null;
+    const project = await response.json();
+    return project;
 }
 
+// Still allow static params generation
 export async function generateStaticParams() {
-  const response = await fetch('https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects?acf_format=standard', {
-    cache: "force-cache",
-  });
-  const projects: Project[] = await response.json();
+    const response = await fetch('https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects?acf_format=standard', {
+        cache: "no-store"  // Ensure no caching is used
+    });
+    const projects: Project[] = await response.json();
 
-  return projects.map((project) => ({
-    id: project.id.toString(),
-  }));
+    return projects.map((project) => ({
+        id: project.id.toString(),
+    }));
 }
 
 export default async function ProjectDetail({ params }: { params: { id: string } }) {
-  const project = await fetchProject(params.id);
-  if (!project) return <p>Project not found</p>;
+    const project = await fetchProject(params.id);
+    if (!project) return <p>Project not found</p>;
 
-  return <ProjectDetailClient project={project} />;
+    return (
+        <ProjectDetailClient project={project} /> // Client component to handle client-side behavior
+    );
 }
 
-export const revalidate = 60; // ISR: Revalidate every 60 seconds
