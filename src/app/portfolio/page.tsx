@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import Layout from "../components/Layout";
 import "@/app/css/index.css";
-import "@/app/css/portfolio.css";
 
 interface Image {
     url:string;

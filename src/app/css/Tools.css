@@ -27,7 +27,7 @@
     align-items: center;
     /* Align image and text vertically */
     padding: 10px;
-    background-color: #434343;
+    background-color: rgba(122, 122, 122, 0.658);
     /* Optional background for better visibility */
     border-radius: 5px;
     /* Optional: Rounded corners */
