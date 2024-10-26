@@ -1,52 +1,49 @@
 /* General Contact Section Styles */
 .contact {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    gap: 1rem; /* Adjusts spacing between items */
-    margin: 2rem 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 0.75rem; /* Adjusted spacing for mobile */
+  margin: 2rem 0;
+}
+
+/* Individual Contact Item */
+.contact-item a,
+.email-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.25rem; /* Smaller margin for tighter spacing */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Icon Styling for All Contact Links */
+.contact-item a img,
+.email-item a img {
+  width: 32px; /* Smaller icons for mobile */
+  height: 32px; /* Adjusted size for better fit */
+}
+
+/* Hover Effect */
+.contact-item a:hover,
+.email-item a:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Tablet and Larger Screens Adjustments */
+@media (min-width: 48rem) {
+  .contact {
+      gap: 1rem; /* Adjusts spacing between items */
   }
-  
-  /* Individual Contact Item */
   .contact-item a,
   .email-item a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5rem; /* Reduced margin for smaller spacing */
-    transition: transform 0.2s ease-in-out;
+      margin: 0.5rem; /* Reduced margin for smaller spacing */
   }
-  
-  /* Icon Styling for All Contact Links */
   .contact-item a img,
   .email-item a img {
-    width: 40px;
-    height: 40px; /* Adjusted size for better fit */
+      width: 40px; /* Adjusted size for better fit */
+      height: 40px; /* Adjusted size for better fit */
   }
-  
-  /* Hover Effect */
-  .contact-item a:hover,
-  .email-item a:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-  }
-  
-  /* Mobile-Specific Adjustments */
-  @media (max-width: 600px) {
-    .contact {
-      gap: 0.75rem; /* Adjusts spacing between items */
-    }
-  
-    .contact-item a,
-    .email-item a {
-      margin: 0.25rem; /* Smaller margin for tighter spacing */
-    }
-  
-    .contact-item a img,
-    .email-item a img {
-      width: 32px;
-      height: 32px; /* Smaller icons for mobile */
-    }
-  }
-  
+}

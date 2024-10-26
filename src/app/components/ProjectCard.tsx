@@ -41,7 +41,7 @@ const ProjectCard = ({
         {/* Link to the individual project page */}
         <div className="link-button">
           {/* <Link href={`/projects/${project.id}`}>More Info</Link> */}
-          <LinkWithArrow href={`/projects/${project.id}`}>More Info</LinkWithArrow>
+          <LinkWithArrow href={`/projects/${project.slug}`}>More Info</LinkWithArrow>
         </div>
       </article>
     </motion.div>

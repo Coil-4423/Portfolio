@@ -40,7 +40,7 @@
 }
 
 /* Desktop styles - for larger screens */
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .puzzle-container{
     display: flex;
   }
@@ -55,7 +55,7 @@
 }
 
 /* Larger desktop styles */
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   .puzzle-text {
     font-size: 4rem; /* Larger font size for desktops */
   }

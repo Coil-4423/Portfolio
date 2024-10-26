@@ -1,67 +1,67 @@
+/* Base styles for mobile-first design */
 .slideshow-container {
-    width: 100%; 
-    max-width: 64rem;
-    margin:0 auto;
-    /* overflow: hidden; Prevent any overflow from large images */
-    margin-top:2rem;
-  }
+  width: 100%;
+  max-width: 64rem;
+  margin: 2rem auto;
+  /* No overflow for simplicity on mobile */
+}
 
-.swiper{
-  padding: 0 2rem; /* Add padding to allow space for the buttons */
-  overflow: hidden; /* Retain overflow:hidden if needed */
+.swiper {
+  padding: 0; /* Remove padding for mobile to keep it compact */
+  overflow: hidden;
   margin: 0 auto;
 }
 
-  /* Reposition the Swiper pagination dots below the slider */
+/* Swiper pagination dots for mobile */
 .swiper-pagination {
-  margin-top:1rem;
-  text-align: center; /* Center the dots */
-  position: relative; /* Ensure it's outside of the swiper container */
+  margin-top: 1rem;
+  text-align: center;
+  position: relative; /* Keep it below the swiper container */
 }
 
-/* Customize the appearance of the dots */
 .swiper-pagination-bullet {
-  background-color: #00ff11; /* Your custom color for the pagination dots */
+  background-color: #00ff11;
   opacity: 0.75; /* Slight transparency */
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #00ff11; /* Active dot color */
-  opacity: 1;
+  background-color: #00ff11;
+  opacity: 1; /* Fully visible active dot */
 }
 
-/* Ensure buttons are visible */
+/* Hide buttons for mobile devices */
 .swiper-button-prev, .swiper-button-next {
-  position: absolute;
-  top: 50%; /* Center vertically */
-  z-index: 10; /* Ensure they are above the images */
-  width: 3rem; /* Set the width of the buttons */
-  height: 3rem; /* Set the height of the buttons */
-  color: #00ff11; /* Set a visible color for the buttons */
-  transform: translateY(-50%); /* Center the buttons vertically */
-  cursor: pointer;
+  display: none;
 }
 
-/* Move the buttons outside of the image area */
-.swiper-button-prev {
-  left: -0.8rem; /* Adjust this value to move the button to the left */
-}
-
-.swiper-button-next {
-  right: -0.8rem; /* Adjust this value to move the button to the right */
-}
-
-/* Optional: Hover effect for the buttons */
-.swiper-button-prev:hover, .swiper-button-next:hover {
-  color: #b7ff00; /* Change the button color on hover */
-}
-
-@media  (max-width:48rem) {
-  .swiper{
-    padding:0;
+/* Adjustments for tablets and small desktops */
+@media (min-width: 48rem) {
+  .swiper {
+    padding: 0 2rem; /* Add padding to allow space for buttons */
   }
 
   .swiper-button-prev, .swiper-button-next {
-    display: none;
+    display: block; /* Show buttons for larger screens */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    z-index: 10;
+    width: 3rem;
+    height: 3rem;
+    color: #00ff11;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .swiper-button-prev {
+    left: -0rem; /* Move the button left */
+  }
+
+  .swiper-button-next {
+    right: -1.6rem; /* Move the button right */
+  }
+
+  /* Optional: Hover effect for buttons */
+  .swiper-button-prev:hover, .swiper-button-next:hover {
+    color: #b7ff00; /* Change button color on hover */
   }
 }

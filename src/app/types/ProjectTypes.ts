@@ -24,4 +24,5 @@ export interface Project {
         }[];
         tools?:Tool[]
     };
+    slug: string;
 }

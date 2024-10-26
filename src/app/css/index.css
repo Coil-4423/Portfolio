@@ -1,8 +1,4 @@
-/* Importing fonts from Google Fonts */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap'); */
-
-
-/* Base styling for html and body */
+/* Base styling for html and body (mobile-first) */
 html, body {
   font-family: "Oxanium", sans-serif !important;
   height: 100%;
@@ -13,14 +9,13 @@ html, body {
   flex-direction: column;
   box-sizing: border-box;
   overflow-x: hidden;
-  overflow-y:auto ;
-  color: #ffffff; /* Default text color */
+  overflow-y: auto;
+  color: #ffffff;
 }
 
-/* Body layout */
+/* Layout for the body */
 body {
   justify-content: flex-start;
-
   place-items: center;
 }
 
@@ -30,7 +25,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  /* min-height: 100vh; */
 }
 
 /* Main content section */
@@ -46,7 +40,7 @@ main {
   align-items: center;
 }
 
-/* Headings - mobile-first */
+/* Typography (mobile-first) */
 h1, h2, h3, h4, h5, h6 {
   color: #fff;
   margin: 1rem 0;
@@ -59,7 +53,6 @@ h4 { font-size: 1.25rem; line-height: 1.4; }
 h5 { font-size: 1rem; line-height: 1.5; }
 h6 { font-size: 0.875rem; line-height: 1.5; }
 
-/* Paragraphs - mobile-first */
 p {
   font-size: 1rem;
   line-height: 1.6;
@@ -94,7 +87,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Container for the landing page */
+/* Landing page container */
 .landing-page {
   width: 100%;
   max-width: 64rem;
@@ -106,7 +99,7 @@ button:focus-visible {
   flex-direction: column;
 }
 
-/* Project card styles */
+/* Project card styling */
 .project-card {
   max-width: 100%;
 }
@@ -124,21 +117,12 @@ button:focus-visible {
   height: fit-content;
 }
 
-
 .about-link a:hover, .projects-link a:hover {
   animation: rainbow-border 1.5s linear infinite;
 }
 
-
-
-/* Hover Effect */
 .about-link a:hover .arrow, .projects-link a:hover .arrow {
-  transform: translateX(5px); /* Smooth move to the right */
-}
-
-/* Hover Animation: Rainbow Border */
-.about-link a:hover, .projects-link a:hover {
-  animation: rainbow-border 1.5s linear infinite;
+  transform: translateX(5px);
 }
 
 /* Rainbow border animation */
@@ -152,17 +136,36 @@ button:focus-visible {
   100% { border-color: violet; }
 }
 
-/* Flex container for sections with motion */
+/* Flex container with motion */
 .motion-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   height: 100%;
-  margin:1rem 0;
+  margin: 1rem 0;
 }
 
-/* Responsive typography and padding - tablet and small desktop */
+/* Styling the Name */
+.name {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Styling the Job Title */
+.job-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* Mobile styles */
+.intro-text {
+  font-size: 1.8rem;
+}
+
+/* Tablet and small desktop adjustments */
 @media (min-width: 48rem) {
   p {
     font-size: 1.125rem;
@@ -179,6 +182,14 @@ button:focus-visible {
   .about-link a, .projects-link a {
     padding: 1.5rem 3rem;
   }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .job-title {
+    font-size: 1.5rem;
+  }
 }
 
 /* Larger desktop adjustments */
@@ -191,33 +202,4 @@ button:focus-visible {
   h1 { font-size: 3.5rem; line-height: 1.1; }
   h2 { font-size: 3rem; line-height: 1.1; }
   h3 { font-size: 2.5rem; line-height: 1.2; }
-}
-
-/* Styling the Name */
-.name {
-  font-size: 2.5rem; /* Emphasize the name with larger font size */
-  font-weight: 600; /* Make it bolder for emphasis */
-}
-
-/* Job Title Styling */
-.job-title {
-  font-size: 1.5rem;
-  font-weight: 300; /* Light font weight for a subtle appearance */
-  color: #ccc; /* Lighter color for distinction */
-  margin-bottom: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .intro-text {
-    font-size: 1.8rem;
-  }
-
-  .name {
-    font-size: 2rem;
-  }
-
-  .job-title {
-    font-size: 1.2rem;
-  }
 }
