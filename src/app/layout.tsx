@@ -6,7 +6,7 @@ export const metadata = {
     "Explore the portfolio of Takehito Sumimura, a web developer specializing in React, TypeScript, and front-end technologies.",
   keywords:
     "Takehito Sumimura, web developer, React, TypeScript, portfolio, front-end development, JavaScript, developer portfolio, modern web design",
-  icon: "/take-logo.svg", // Directly pass the icon path as a string
+  icon: "/take.png", // Directly pass the icon path as a string
 };
 
 export default function RootLayout({
@@ -22,10 +22,9 @@ export default function RootLayout({
         {/* Meta Keywords for SEO */}
         <meta name="keywords" content={metadata.keywords} />
 
-        {/* Favicon and Manifest */}
+        {/* Favicon*/}
         <link rel="icon" href={metadata.icon} type="image/svg+xml" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#130f8a" />
 
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={metadata.title} />
