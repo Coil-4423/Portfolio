@@ -7,9 +7,9 @@ import ProjectDetailClient from '../../components/ProjectDetailClient';
 async function fetchProjectBySlug(slug: string): Promise<Project | null> {
   const response = await fetch(
     `https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects?slug=${slug}&acf_format=standard`,
-    { cache: "force-cache" }
+    { cache: "reload" }
   );
-
+  console.log(`https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects?slug=${slug}&acf_format=standard`);
   const projects = await response.json();
   return projects.length > 0 ? projects[0] : null; // Return the first matching project
 }
@@ -18,7 +18,7 @@ async function fetchProjectBySlug(slug: string): Promise<Project | null> {
 export async function generateStaticParams() {
   const response = await fetch(
     'https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects?acf_format=standard',
-    { cache: "force-cache" }
+    { cache: "reload" }
   );
   
   const projects: Project[] = await response.json();
