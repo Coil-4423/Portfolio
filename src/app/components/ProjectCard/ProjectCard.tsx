@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import "./projects.css";
+import "@/css/projects.css";
 import { Project } from "../../types/ProjectTypes";
 import '@/css/LinkButton.css'
 import LinkWithArrow from "../LinkWithArrow/LinkWithArrow";
