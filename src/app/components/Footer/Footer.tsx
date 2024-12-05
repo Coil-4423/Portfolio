@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import LoadingComponent from "../components/LoadingComponent";
-import "../css/ContactLinks.css";
-import "../css/index.css"; // Define types for API response and ACF fields
-import "../css/Footer.css"; // Import any custom CSS if necessary
+import LoadingComponent from "../LoadingComponent/LoadingComponent";
+import "@/css/ContactLinks.css";
+import "@/css/index.css"; // Define types for API response and ACF fields
+import "./Footer.css"; // Import any custom CSS if necessary
 
 interface Contact {
   contact_url?: string;

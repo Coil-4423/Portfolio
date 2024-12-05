@@ -1,12 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Layout from "../components/Layout";
-import LoadingComponent from "../components/LoadingComponent";
+import Layout from "../components/Layout/Layout";
+import LoadingComponent from "../components/LoadingComponent/LoadingComponent";
 import ToolsSection from "./ToolsSection"; // Import the ToolsSection component
 import "../css/index.css";
-import "../css/About.css";
+import "./About.css";
 import { AboutPageData } from "../types/AboutTypes"; // Import the AboutPageData type
-import { SectionWithAnimation } from "../components/SectionWithAnimation";
+import { SectionWithAnimation } from "../components/SectionWithAnimation/SectionWithAnimation";
 
 const About = () => {
   const [aboutData, setAboutData] = useState<AboutPageData | null>(null); // State to store about page data

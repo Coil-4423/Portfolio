@@ -1,13 +1,13 @@
 // src/app/projects/[id]/page.tsx
 
-import { Project } from '@/app/types/ProjectTypes';
-import ProjectDetailClient from '../../components/ProjectDetailClient';
+import { Project } from '@/types/ProjectTypes';
+import ProjectDetailClient from '../../components/ProjectDetail/ProjectDetailClient';
 
 // Fetch project data with force-cache and optional revalidation
 async function fetchProjectBySlug(slug: string): Promise<Project | null> {
   const response = await fetch(
     `https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects?slug=${slug}&acf_format=standard`,
-    { cache: "reload" }
+    { cache: "default" }
   );
   console.log(`https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects?slug=${slug}&acf_format=standard`);
   const projects = await response.json();
@@ -18,7 +18,7 @@ async function fetchProjectBySlug(slug: string): Promise<Project | null> {
 export async function generateStaticParams() {
   const response = await fetch(
     'https://sumitake.ca/portfolio-data/wp-json/wp/v2/projects?acf_format=standard',
-    { cache: "reload" }
+    { cache: "default" }
   );
   
   const projects: Project[] = await response.json();

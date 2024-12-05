@@ -3,7 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper and SwiperSlide components
 import "swiper/swiper-bundle.css"; // Import Swiper's styles
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "@/app/css/SlideShow.css";
+import "./SlideShow.css";
 
 interface SlideShowProps {
   slides: React.ReactNode[]; // Accepts an array of React elements (e.g., ProjectCard or images)

@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import "@/app/css/projects.css";
-import { Project } from "../types/ProjectTypes";
-import '../css/LinkButton.css'
-import LinkWithArrow from "./LinkeWithArrow";
+import "./projects.css";
+import { Project } from "../../types/ProjectTypes";
+import '@/css/LinkButton.css'
+import LinkWithArrow from "../LinkWithArrow/LinkWithArrow";
 
 const ProjectCard = ({
   project,

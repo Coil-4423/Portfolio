@@ -1,15 +1,15 @@
 // src/app/projects/[id]/ProjectDetailClient.tsx
 "use client"; // Mark this as a client component
 
-import Layout from "./Layout";
-import "@/app/css/index.css";
-import "@/app/css/project-detail.css";
-import SlideShow from "./SlideShow";
+import Layout from "../Layout/Layout";
+import "@/css/index.css";
+import "./ProjectDetail.css";
+import SlideShow from "../SlideShow/SlideShow";
 import Image from "next/image";
-import { Project } from "../types/ProjectTypes";
-import ToolsSection from "../about/ToolsSection";
-import "@/app/css/LinkButton.css";
-import { SectionWithAnimation } from "./SectionWithAnimation";
+import { Project } from "@/types/ProjectTypes";
+import ToolsSection from "@/about/ToolsSection";
+import "@/css/LinkButton.css";
+import { SectionWithAnimation } from "../SectionWithAnimation/SectionWithAnimation";
 
 export default function ProjectDetailClient({ project }: { project: Project }) {
 

@@ -1,16 +1,16 @@
 "use client";
 
-import Layout from "./components/Layout";
-import PuzzleText from "./components/PuzzleAnimation";
+import Layout from "./components/Layout/Layout";
+import PuzzleText from "./components/PuzzleAnimation/PuzzleAnimation";
 import "./css/index.css";
-import Contact from "./components/Contact";
-import SkillsCarousel from "./components/SkillsCarousel";
-import SlideShow from "./components/SlideShow";
-import ProjectCard from "./components/ProjectCard";
+import Contact from "./components/Contact/Contact";
+import SkillsCarousel from "./components/SkillsCarousel/SkillsCarousel";
+import SlideShow from "./components/SlideShow/SlideShow";
+import ProjectCard from "./components/ProjectCard/ProjectCard";
 import { useState, useEffect } from "react";
 import { Project } from "./types/ProjectTypes";
-import { SectionWithAnimation } from "./components/SectionWithAnimation";
-import LinkWithArrow from "./components/LinkeWithArrow";
+import { SectionWithAnimation } from "./components/SectionWithAnimation/SectionWithAnimation";
+import LinkWithArrow from "./components/LinkWithArrow/LinkWithArrow";
 
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import "../css/LinkButton.css"
+import "@/css/LinkButton.css"
 
 interface LinkWithArrowProps {
   href: string;

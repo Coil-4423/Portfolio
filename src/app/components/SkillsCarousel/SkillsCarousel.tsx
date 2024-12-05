@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image'; // Import Image for logos
-import '@/app/css/skillsCarousel.css';
-import { AboutPageData } from "../types/AboutTypes"; // Import the AboutPageData type
+import './SkillsCarousel.css';
+import { AboutPageData } from "../../types/AboutTypes"; // Import the AboutPageData type
 
 const SkillsCarousel: React.FC = () => {
   const [aboutData, setAboutData] = useState<AboutPageData | null>(null); // State to store about page data

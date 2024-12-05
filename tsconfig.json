@@ -18,7 +18,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/app/*"]
     },
     "types": ["node", "@types/three"]
   },

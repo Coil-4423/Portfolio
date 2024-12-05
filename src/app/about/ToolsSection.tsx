@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { ACFFields} from '../types/AboutTypes';
 import React, { useRef } from 'react';
-import '@/app/css/Tools.css'
+import './Tools.css'
 
 
 // Define animation variants for each tool with puzzle effect

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 import "@/app/css/index.css";
 
 interface Image {

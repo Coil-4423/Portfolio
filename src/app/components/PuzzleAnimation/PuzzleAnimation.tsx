@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import '../css/PuzzleAnimation.css'; // Import the CSS file
+import './PuzzleAnimation.css'; // Import the CSS file
 
 const PuzzleText: React.FC = () => {
   const reactText: string = "React/Next.js";

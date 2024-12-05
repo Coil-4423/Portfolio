@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/LoadingComponent.css'; // Optional, if you want to style it
+import './LoadingComponent.css'; // Optional, if you want to style it
 
 const LoadingComponent = () => {
   return (
