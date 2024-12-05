@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link'; // Import for navigation using Next.js
-import './header.css'; // Import your CSS file
+import './Header.css'; // Import your CSS file
 import Image from 'next/image';
 
 const NavBar: React.FC = () => {

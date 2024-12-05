@@ -1,9 +1,9 @@
 'use client'
 // pages/projects.tsx
 import React, { useState, useEffect } from 'react';
-import Layout from "../components/Layout/Layout";
-import "@/app/css/index.css";
-import "@/app/css/projects.css";
+import Layout from "@/components/Layout/Layout";
+import "@/css/index.css";
+import "@/css/projects.css";
 import ProjectCard from '../components/ProjectCard/ProjectCard';
 import { Project } from '../types/ProjectTypes';
 
